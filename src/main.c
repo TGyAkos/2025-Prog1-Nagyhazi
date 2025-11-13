@@ -9,8 +9,6 @@
 #include <string.h>
 
 int main(int argc, char **argv) {
-  // TODO Remove trailing ' ' and '  ' chars
-
   // TODO REMOVE debug code
   // char* test = "a .-";
   // Split_str *test2 = split_str(test, ' ');
