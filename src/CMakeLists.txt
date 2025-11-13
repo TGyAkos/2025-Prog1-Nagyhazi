@@ -7,5 +7,7 @@ set(CMAKE_C_FLAGS "-Wall -Werror")
 
 add_executable(nagyhazi main.c
         debugmalloc.h
-        morze.c
-        morze.h)
+        morse.c
+        morse.h
+        file_handling.c
+        file_handling.h)
