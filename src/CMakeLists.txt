@@ -10,4 +10,6 @@ add_executable(nagyhazi main.c
         morse.c
         morse.h
         file_handling.c
-        file_handling.h)
+        file_handling.h
+        tests.c
+        tests.h)

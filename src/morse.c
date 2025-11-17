@@ -23,31 +23,16 @@ char *encode_word(Node *start, char *word) {
   encoded->arr = malloc(encoded->len * sizeof(char *));
   for (int i = 0; i < encoded->len; ++i) {
     char *encoded_char = encode_char(start, word[i]);
+    if (encoded_char == NULL)
+      print_error_and_exit(5, "Sikertelen forditas hianyos kodtabla miatt");
     int encoded_char_len = strlen(encoded_char);
     encoded->arr[i] = encoded_char;
     encoded->arr[i][encoded_char_len] = '\0';
-
   }
   char *flattened_encoded_char = flatten_split_str(encoded, " ");
   free_split_str(encoded);
   return flattened_encoded_char;
 }
-
-// char *encode_char(Node *start, char character, char *morse_code,
-//                   const char *morse_char) {
-//   strcat(morse_code, morse_char);
-//
-//   if (start->character == character)
-//     return morse_code;
-//
-//   if (start->dot == NULL && start->dash == NULL)
-//     return "\0";
-//
-//   encode_char(start->dot, character, morse_code, ".");
-//   encode_char(start->dash, character, morse_code, "-");
-//
-//   return morse_code;
-// }
 
 char *encode_char(Node *start, char character) {
   if (start == NULL)
@@ -134,7 +119,8 @@ char decode_morse_char(Node *start, char *code) {
       break;
     default:
       // TODO print proper error
-      printf("error: decode_morse_char code[%d]: %c\n", i, code[i]);
+      // printf("error: decode_morse_char code[%d]: %c\n", i, code[i]);
+      print_error_and_exit(5, "Sikertelen forditas hianyos kodtabla miatt");
       break;
     }
   }
@@ -178,8 +164,6 @@ Split_str *split_str(const char *arr, char delim) {
     ++ct_len;
   }
 
-  // TODO will give unpredictable result if arr ends in delim
-  // TODO THROW ERROR 03 before EVER getting here
   int ct_split_arr = 0;
   int ct_split_arr_len = ct_delim + 1;
   char **split_arr = malloc(ct_split_arr_len * sizeof(char *));
@@ -224,7 +208,7 @@ char *flatten_split_str(Split_str *split_str, char *delim) {
 
   for (int i = 0; i < split_str->len; ++i) {
     strcat(flattened, split_str->arr[i]);
-    if (i != split_str->len -1)
+    if (i != split_str->len - 1)
       strcat(flattened, delim);
   }
 
@@ -249,4 +233,9 @@ void dump_node(Node *start, int counter) {
   ++counter;
   dump_node(start->dot, counter);
   dump_node(start->dash, counter);
+}
+
+void print_error_and_exit(const int error_code, char *description) {
+  printf("Hiba: %d - %s\n", error_code, description);
+  exit(1);
 }

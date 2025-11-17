@@ -5,10 +5,10 @@
 #ifndef NAGYHAZI_MORSE_H
 #define NAGYHAZI_MORSE_H
 
+#include "debugmalloc.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "debugmalloc.h"
 
 typedef struct Node {
   char character;
@@ -43,5 +43,8 @@ void free_tree(Node *start);
 // Debug functions
 void dump_tree(Node *start);
 void dump_node(Node *start, int counter);
+
+// Error functions
+void print_error_and_exit(int error_code, char *description);
 
 #endif // NAGYHAZI_MORSE_H
