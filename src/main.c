@@ -1,20 +1,22 @@
 //
 // Created by User01 on 11/13/2025.
 //
+#define NDEBUG
+
+#include "debugmalloc.h"
 #include "file_handling.h"
 #include "morse.h"
+#include "tests.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main(int argc, char **argv) {
-  // TODO REMOVE debug code
-  // char* test = "a .-";
-  // Split_str *test2 = split_str(test, ' ');
-  // printf("%s,%s,%d", test2->arr[0], test2->arr[1], test2->len);
-  // free_split_str(test2);
-  ////////////////////////////////
+  #ifndef NDEBUG
+    run_all_tests();
+    return 0;
+  #endif // NDEBUG
 
   char *out_filename = malloc((strlen("./result.txt") + 1) * sizeof(char));
   strcpy(out_filename, "./result.txt");

@@ -4,7 +4,7 @@
 
 #include "file_handling.h"
 
-// TODO write error if the code table is badly formatted
+/** @copydoc file_to_morse_tree */
 void file_to_morse_tree(Node **start, char *filename) {
   char *lines = read_all_lines(filename);
   Split_str *arr = split_str(lines, '\n');
@@ -12,6 +12,10 @@ void file_to_morse_tree(Node **start, char *filename) {
   for (int i = 0; i < arr->len; ++i) {
     Split_str *code = split_str(arr->arr[i], ' ');
     if (code->len != 2) {
+      free_split_str(code);
+      free_split_str(arr);
+      free_tree(*start);
+      free(*start);
       print_error_and_exit(3, "Helytelen kodtabla formatum");
     }
     add_generate_morse(start, code->arr[1], code->arr[0][0]);
@@ -20,6 +24,7 @@ void file_to_morse_tree(Node **start, char *filename) {
   free_split_str(arr);
 }
 
+/** @copydoc write_to_file */
 void write_to_file(char *text, char *filename) {
   FILE *checkfp = fopen(filename, "r");
   if (checkfp != NULL) {
@@ -31,22 +36,26 @@ void write_to_file(char *text, char *filename) {
   fclose(fptr);
 }
 
+/** @copydoc remove_new_line_chars */
 void remove_new_line_chars(char **str) {
   int ct = 0;
-  while ((*str)[ct] != '\0')
-    if ((*str)[ct] == '\n')
-      ++ct;
+  int ct_no_new_lines = 0;
+  while ((*str)[ct++] != '\0')
+    if ((*str)[ct] != '\n')
+      ++ct_no_new_lines;
 
   int ct_final = 0;
-  char *final = malloc((ct + 1) * sizeof(char));
-  for (int i = 0; i < ct; ++i)
-    if ((*str)[ct] == '\n')
-      final[ct_final++] = (*str)[ct];
-  final[ct] = '\0';
+  char *final = malloc((ct_no_new_lines + 1) * sizeof(char));
+  for (int i = 0; i < ct_no_new_lines; ++i)
+    if ((*str)[ct_no_new_lines] == '\n')
+      final[ct_final++] = (*str)[ct_no_new_lines];
+  final[ct_no_new_lines] = '\0';
 
   free(*str);
   *str = final;
 }
+
+/** @copydoc read_all_lines */
 char *read_all_lines(char *filename) {
   FILE *fptr = fopen(filename, "r");
   if (fptr == NULL) {

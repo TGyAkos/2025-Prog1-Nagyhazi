@@ -4,6 +4,7 @@
 
 #include "morse.h"
 
+/** @copydoc encode_text */
 char *encode_text(Node *start, char *text) {
   Split_str *arr = split_str(text, ' ');
   for (int i = 0; i < arr->len; ++i) {
@@ -17,6 +18,7 @@ char *encode_text(Node *start, char *text) {
   return encoded;
 }
 
+/** @copydoc encode_word */
 char *encode_word(Node *start, char *word) {
   Split_str *encoded = malloc(sizeof(Split_str));
   encoded->len = strlen(word);
@@ -34,6 +36,7 @@ char *encode_word(Node *start, char *word) {
   return flattened_encoded_char;
 }
 
+/** @copydoc encode_char */
 char *encode_char(Node *start, char character) {
   if (start == NULL)
     return NULL;
@@ -75,6 +78,7 @@ char *encode_char(Node *start, char character) {
   return NULL;
 }
 
+/** @copydoc decode_morse_text */
 char *decode_morse_text(Node *start, char *morse_text) {
   Split_str *arr = split_str(morse_text, '\t');
   for (int i = 0; i < arr->len; ++i) {
@@ -88,6 +92,7 @@ char *decode_morse_text(Node *start, char *morse_text) {
   return decoded;
 }
 
+/** @copydoc decode_morse_word */
 char *decode_morse_word(Node *start, char *morse_word) {
   Split_str *arr = split_str(morse_word, ' ');
   char *decoded = malloc((arr->len + 1) * sizeof(char));
@@ -98,6 +103,7 @@ char *decode_morse_word(Node *start, char *morse_word) {
   return decoded;
 }
 
+/** @copydoc init_node */
 Node *init_node(void) {
   Node *new = malloc(sizeof(Node));
   new->character = '\0';
@@ -106,6 +112,7 @@ Node *init_node(void) {
   return new;
 }
 
+/** @copydoc decode_morse_char */
 char decode_morse_char(Node *start, char *code) {
   int len = strlen(code);
   Node *current = start;
@@ -128,6 +135,7 @@ char decode_morse_char(Node *start, char *code) {
   return current->character;
 }
 
+/** @copydoc add_generate_morse */
 void add_generate_morse(Node **start, const char *code, const char character) {
   int len = strlen(code);
   Node *current = *start;
@@ -144,17 +152,22 @@ void add_generate_morse(Node **start, const char *code, const char character) {
     default:
       // TODO: print error here in a proper manner
       printf("error add_generate_morse\n");
+      print_error_and_exit(2, "Nem ASCII karakter van a kodtablaban vagy a "
+                              "kodolando/dekodolando szovegben");
       break;
     }
   }
   current->character = character;
 }
+
+/** @copydoc try_add_node */
 void try_add_node(Node **node) {
   if (*node != NULL)
     return;
   *node = init_node();
 }
 
+/** @copydoc split_str */
 Split_str *split_str(const char *arr, char delim) {
   int ct_len = 0;
   int ct_delim = 0;
@@ -191,6 +204,7 @@ Split_str *split_str(const char *arr, char delim) {
   return new;
 }
 
+/** @copydoc free_split_str */
 void free_split_str(Split_str *split_str) {
   for (int i = 0; i < split_str->len; ++i)
     free(split_str->arr[i]);
@@ -198,6 +212,7 @@ void free_split_str(Split_str *split_str) {
   free(split_str);
 }
 
+/** @copydoc flatten_split_str */
 char *flatten_split_str(Split_str *split_str, char *delim) {
   int ct_char = 1 + split_str->len;
   for (int i = 0; i < split_str->len; ++i)
@@ -215,6 +230,7 @@ char *flatten_split_str(Split_str *split_str, char *delim) {
   return flattened;
 }
 
+/** @copydoc free_tree */
 void free_tree(Node *start) {
   if (start == NULL)
     return;
@@ -224,8 +240,10 @@ void free_tree(Node *start) {
   free(start->dash);
 }
 
+/** @copydoc dump_tree */
 void dump_tree(Node *start) { dump_node(start, 0); }
 
+/** @copydoc dump_node */
 void dump_node(Node *start, int counter) {
   if (start == NULL)
     return;
@@ -235,6 +253,7 @@ void dump_node(Node *start, int counter) {
   dump_node(start->dash, counter);
 }
 
+/** @copydoc print_error_and_exit */
 void print_error_and_exit(const int error_code, char *description) {
   printf("Hiba: %d - %s\n", error_code, description);
   exit(1);

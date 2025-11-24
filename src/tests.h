@@ -5,10 +5,13 @@
 #ifndef NAGYHAZI_TESTS_H
 #define NAGYHAZI_TESTS_H
 
+#include "debugmalloc.h"
 #include "morse.h"
 #include "file_handling.h"
-#include "debugmalloc.h"
+#include <assert.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void run_all_tests(void);
 
