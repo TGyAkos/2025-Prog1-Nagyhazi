@@ -5,7 +5,10 @@
 #ifndef NAGYHAZI_MORSE_H
 #define NAGYHAZI_MORSE_H
 
+#ifndef NDEBUG
 #include "debugmalloc.h"
+#endif // NDEBUG
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

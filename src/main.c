@@ -1,12 +1,11 @@
 //
 // Created by User01 on 11/13/2025.
 //
+
 #define NDEBUG
 
-#include "debugmalloc.h"
 #include "file_handling.h"
 #include "morse.h"
-#include "tests.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,6 +13,8 @@
 
 int main(int argc, char **argv) {
 #ifndef NDEBUG
+#include "debugmalloc.h"
+#include "tests.h"
   run_all_tests();
   return 0;
 #endif // NDEBUG
