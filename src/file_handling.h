@@ -5,7 +5,12 @@
 #ifndef NAGYHAZI_FILE_HANDLING_H
 #define NAGYHAZI_FILE_HANDLING_H
 
+#ifdef DEBUG_MALLOC
+#include "debugmalloc.h"
+#endif // DEBUG_MALLOC
+
 #include "morse.h"
+#include "split_str.h"
 
 #include <stdlib.h>
 

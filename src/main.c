@@ -2,11 +2,9 @@
 // Created by User01 on 11/13/2025.
 //
 
-#define NDEBUG
-
-#ifndef NDEBUG
+#ifdef DEBUG_MALLOC
 #include "debugmalloc.h"
-#endif // NDEBUG
+#endif // DEBUG_MALLOC
 
 #include "file_handling.h"
 #include "morse.h"
@@ -16,11 +14,11 @@
 #include <string.h>
 
 int main(int argc, char **argv) {
-#ifndef NDEBUG
+#ifdef ENABLE_TESTS
 #include "tests.h"
   run_all_tests();
   return 0;
-#endif // NDEBUG
+#endif // ENABLE_TESTS
 
   char *out_filename = malloc((strlen("./result.txt") + 1) * sizeof(char));
   strcpy(out_filename, "./result.txt");

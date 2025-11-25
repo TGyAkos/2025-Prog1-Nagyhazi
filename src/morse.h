@@ -5,6 +5,12 @@
 #ifndef NAGYHAZI_MORSE_H
 #define NAGYHAZI_MORSE_H
 
+#ifdef DEBUG_MALLOC
+#include "debugmalloc.h"
+#endif // DEBUG_MALLOC
+
+#include "split_str.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,10 +21,6 @@ typedef struct Node {
   struct Node *dash;
 } Node;
 
-typedef struct Split_str {
-  int len;
-  char **arr;
-} Split_str;
 
 /**
  * Encodes a complete text string into morse code by encoding each word separately
@@ -76,31 +78,6 @@ char *decode_morse_word(Node *start, char *morse_word);
  */
 char decode_morse_char(Node *start, char *code);
 
-/**
- * Splits a string into an array of substrings based on a delimiter character
- * Creates a Split_str structure containing the array of parts and their count
- * @param arr String to be split into parts
- * @param delim Delimiter character used to identify split points
- * @return Split_str structure containing the split parts and their count
- */
-Split_str *split_str(const char *arr, char delim);
-
-/**
- * Frees all memory allocated for a Split_str structure
- * Deallocates each individual string in the array and the array itself
- * @param split_str Split_str structure to be freed
- */
-void free_split_str(Split_str *split_str);
-
-/**
- * Flattens a Split_str structure back into a single string
- * Joins all parts together with the specified delimiter string between them
- * The delimiter is not added after the final part
- * @param split_str Split_str structure containing parts to be flattened
- * @param delim Delimiter string to insert between parts
- * @return Flattened string with parts separated by the delimiter
- */
-char *flatten_split_str(Split_str *split_str, char *delim);
 
 /**
  * Initializes a new morse tree node with default values
