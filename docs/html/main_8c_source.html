@@ -95,71 +95,73 @@ $(function(){initNavTree('main_8c_source.html','',''); });
 <a href="main_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by User01 on 11/13/2025.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="main_8c.html#a8de3ed741dadc9c979a4ff17c0a9116e">    4</a></span><span class="preprocessor">#define NDEBUG</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef DEBUG_MALLOC</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;debugmalloc.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="file__handling_8h.html">file_handling.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="morse_8h.html">morse.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="tests_8h.html">tests.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">   15</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_function" href="tests_8h.html#ae9bbb2f5bb69f73e92c761f83223285a">run_all_tests</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">// NDEBUG</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">char</span> *out_filename = malloc((strlen(<span class="stringliteral">&quot;./result.txt&quot;</span>) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  strcpy(out_filename, <span class="stringliteral">&quot;./result.txt&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">if</span> (argc &gt; 2) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    free(out_filename);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    out_filename = malloc((strlen(argv[argc - 1]) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    strcpy(out_filename, argv[argc - 1]);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">int</span> is_reverse = 0;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordflow">if</span> (strcmp(argv[1], <span class="stringliteral">&quot;-r&quot;</span>) == 0)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    is_reverse = 1;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_struct" href="struct_node.html">Node</a> *start = <a class="code hl_function" href="morse_8h.html#a26ad42d8f17ace1dd43256561c6946f9">init_node</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">char</span> *text_content = <a class="code hl_function" href="file__handling_8h.html#ab07a53a783bca1068fd3c920e6c9bd1e">read_all_lines</a>(argv[2 + is_reverse]);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_function" href="file__handling_8h.html#a3605f5a2ca991ddab272fffe18e05432">file_to_morse_tree</a>(&amp;start, argv[1 + is_reverse]);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">char</span> *coded_text = is_reverse ? <a class="code hl_function" href="morse_8h.html#a9e1ea6a4c071bef90e46b31d1b68bcc6">decode_morse_text</a>(start, text_content)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                                : <a class="code hl_function" href="morse_8h.html#a4071b814aab442f4e9506c2aca1f09f7">encode_text</a>(start, text_content);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> write_rtn = <a class="code hl_function" href="file__handling_8h.html#af0bb3faedcf0181f928ab9302cd00e72">write_to_file</a>(coded_text, out_filename);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">if</span> (write_rtn == 0)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    printf(<span class="stringliteral">&quot;Sikeres forditas %s -&gt; %s\n&quot;</span>, argv[2 + is_reverse], out_filename);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  free(coded_text);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  free(out_filename);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  free(text_content);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_function" href="morse_8h.html#af93142b17ebe1ba1b8f9b1d3aa932c95">free_tree</a>(start);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  free(start);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">if</span> (write_rtn == 1)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="morse_8h.html#a2dcb09eefef8a5fc08b84c5ee9a20239">print_error_and_exit</a>(4, <span class="stringliteral">&quot;A kimeneti fajl mar letezik&quot;</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif </span><span class="comment">// DEBUG_MALLOC</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="file__handling_8h.html">file_handling.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="morse_8h.html">morse.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">   16</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef ENABLE_TESTS</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="tests_8h.html">tests.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_function" href="tests_8h.html#ae9bbb2f5bb69f73e92c761f83223285a">run_all_tests</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">// ENABLE_TESTS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">char</span> *out_filename = malloc((strlen(<span class="stringliteral">&quot;./result.txt&quot;</span>) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  strcpy(out_filename, <span class="stringliteral">&quot;./result.txt&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (argc &gt; 2) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    free(out_filename);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    out_filename = malloc((strlen(argv[argc - 1]) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    strcpy(out_filename, argv[argc - 1]);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">int</span> is_reverse = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">if</span> (strcmp(argv[1], <span class="stringliteral">&quot;-r&quot;</span>) == 0)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    is_reverse = 1;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_struct" href="struct_node.html">Node</a> *start = <a class="code hl_function" href="morse_8h.html#a26ad42d8f17ace1dd43256561c6946f9">init_node</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">char</span> *text_content = <a class="code hl_function" href="file__handling_8h.html#ab07a53a783bca1068fd3c920e6c9bd1e">read_all_lines</a>(argv[2 + is_reverse]);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_function" href="file__handling_8h.html#a3605f5a2ca991ddab272fffe18e05432">file_to_morse_tree</a>(&amp;start, argv[1 + is_reverse]);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">char</span> *coded_text = is_reverse ? <a class="code hl_function" href="morse_8h.html#a9e1ea6a4c071bef90e46b31d1b68bcc6">decode_morse_text</a>(start, text_content)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                : <a class="code hl_function" href="morse_8h.html#a4071b814aab442f4e9506c2aca1f09f7">encode_text</a>(start, text_content);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> write_rtn = <a class="code hl_function" href="file__handling_8h.html#af0bb3faedcf0181f928ab9302cd00e72">write_to_file</a>(coded_text, out_filename);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">if</span> (write_rtn == 0)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    printf(<span class="stringliteral">&quot;Sikeres forditas %s -&gt; %s\n&quot;</span>, argv[2 + is_reverse], out_filename);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  free(coded_text);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  free(out_filename);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  free(text_content);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_function" href="morse_8h.html#af93142b17ebe1ba1b8f9b1d3aa932c95">free_tree</a>(start);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  free(start);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (write_rtn == 1)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="morse_8h.html#a2dcb09eefef8a5fc08b84c5ee9a20239">print_error_and_exit</a>(4, <span class="stringliteral">&quot;A kimeneti fajl mar letezik&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
 <div class="ttc" id="afile__handling_8h_html"><div class="ttname"><a href="file__handling_8h.html">file_handling.h</a></div></div>
 <div class="ttc" id="afile__handling_8h_html_a3605f5a2ca991ddab272fffe18e05432"><div class="ttname"><a href="file__handling_8h.html#a3605f5a2ca991ddab272fffe18e05432">file_to_morse_tree</a></div><div class="ttdeci">void file_to_morse_tree(Node **start, char *filename)</div><div class="ttdef"><b>Definition</b> <a href="file__handling_8c_source.html#l00008">file_handling.c:8</a></div></div>
 <div class="ttc" id="afile__handling_8h_html_ab07a53a783bca1068fd3c920e6c9bd1e"><div class="ttname"><a href="file__handling_8h.html#ab07a53a783bca1068fd3c920e6c9bd1e">read_all_lines</a></div><div class="ttdeci">char * read_all_lines(char *filename)</div><div class="ttdef"><b>Definition</b> <a href="file__handling_8c_source.html#l00060">file_handling.c:60</a></div></div>
 <div class="ttc" id="afile__handling_8h_html_af0bb3faedcf0181f928ab9302cd00e72"><div class="ttname"><a href="file__handling_8h.html#af0bb3faedcf0181f928ab9302cd00e72">write_to_file</a></div><div class="ttdeci">int write_to_file(char *text, char *filename)</div><div class="ttdef"><b>Definition</b> <a href="file__handling_8c_source.html#l00028">file_handling.c:28</a></div></div>
-<div class="ttc" id="amain_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">main.c:15</a></div></div>
+<div class="ttc" id="amain_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition</b> <a href="#l00016">main.c:16</a></div></div>
 <div class="ttc" id="amorse_8h_html"><div class="ttname"><a href="morse_8h.html">morse.h</a></div></div>
 <div class="ttc" id="amorse_8h_html_a26ad42d8f17ace1dd43256561c6946f9"><div class="ttname"><a href="morse_8h.html#a26ad42d8f17ace1dd43256561c6946f9">init_node</a></div><div class="ttdeci">Node * init_node(void)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00107">morse.c:107</a></div></div>
-<div class="ttc" id="amorse_8h_html_a2dcb09eefef8a5fc08b84c5ee9a20239"><div class="ttname"><a href="morse_8h.html#a2dcb09eefef8a5fc08b84c5ee9a20239">print_error_and_exit</a></div><div class="ttdeci">void print_error_and_exit(int error_code, char *description)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00257">morse.c:257</a></div></div>
+<div class="ttc" id="amorse_8h_html_a2dcb09eefef8a5fc08b84c5ee9a20239"><div class="ttname"><a href="morse_8h.html#a2dcb09eefef8a5fc08b84c5ee9a20239">print_error_and_exit</a></div><div class="ttdeci">void print_error_and_exit(int error_code, char *description)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00194">morse.c:194</a></div></div>
 <div class="ttc" id="amorse_8h_html_a4071b814aab442f4e9506c2aca1f09f7"><div class="ttname"><a href="morse_8h.html#a4071b814aab442f4e9506c2aca1f09f7">encode_text</a></div><div class="ttdeci">char * encode_text(Node *start, char *text)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00008">morse.c:8</a></div></div>
 <div class="ttc" id="amorse_8h_html_a9e1ea6a4c071bef90e46b31d1b68bcc6"><div class="ttname"><a href="morse_8h.html#a9e1ea6a4c071bef90e46b31d1b68bcc6">decode_morse_text</a></div><div class="ttdeci">char * decode_morse_text(Node *start, char *morse_text)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00082">morse.c:82</a></div></div>
-<div class="ttc" id="amorse_8h_html_af93142b17ebe1ba1b8f9b1d3aa932c95"><div class="ttname"><a href="morse_8h.html#af93142b17ebe1ba1b8f9b1d3aa932c95">free_tree</a></div><div class="ttdeci">void free_tree(Node *start)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00234">morse.c:234</a></div></div>
-<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition</b> <a href="morse_8h_source.html#l00013">morse.h:13</a></div></div>
+<div class="ttc" id="amorse_8h_html_af93142b17ebe1ba1b8f9b1d3aa932c95"><div class="ttname"><a href="morse_8h.html#af93142b17ebe1ba1b8f9b1d3aa932c95">free_tree</a></div><div class="ttdeci">void free_tree(Node *start)</div><div class="ttdef"><b>Definition</b> <a href="morse_8c_source.html#l00171">morse.c:171</a></div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition</b> <a href="morse_8h_source.html#l00018">morse.h:18</a></div></div>
 <div class="ttc" id="atests_8h_html"><div class="ttname"><a href="tests_8h.html">tests.h</a></div></div>
 <div class="ttc" id="atests_8h_html_ae9bbb2f5bb69f73e92c761f83223285a"><div class="ttname"><a href="tests_8h.html#ae9bbb2f5bb69f73e92c761f83223285a">run_all_tests</a></div><div class="ttdeci">void run_all_tests(void)</div><div class="ttdef"><b>Definition</b> <a href="tests_8c_source.html#l00007">tests.c:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

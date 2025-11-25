@@ -2,11 +2,10 @@ var indexSectionsWithContent =
 {
   0: "acdefilmnprstw",
   1: "ns",
-  2: "fmt",
+  2: "fmst",
   3: "adefimprstw",
   4: "acdl",
-  5: "ns",
-  6: "n"
+  5: "ns"
 };
 
 var indexSectionNames =
@@ -16,8 +15,7 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "typedefs",
-  6: "defines"
+  5: "typedefs"
 };
 
 var indexSectionLabels =
@@ -27,7 +25,6 @@ var indexSectionLabels =
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Typedefs",
-  6: "Macros"
+  5: "Typedefs"
 };
 

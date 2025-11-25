@@ -9,15 +9,15 @@
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{morse_8h}{morse.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00008}\mbox{\hyperlink{morse_8h_a4071b814aab442f4e9506c2aca1f09f7}{00008}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{morse_8c_a4071b814aab442f4e9506c2aca1f09f7}{encode\_text}}(\mbox{\hyperlink{struct_node}{Node}}\ *start,\ \textcolor{keywordtype}{char}\ *text)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00009}00009\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(text,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00009}00009\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(text,\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00010}00010\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}};\ ++i)\ \{}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{char}\ *temp\ =\ \mbox{\hyperlink{morse_8c_a05077f5210280e02ee9c5a410b4169ab}{encode\_word}}(start,\ arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00012}00012\ \ \ \ \ free(arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00013}00013\ \ \ \ \ arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]\ =\ temp;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00014}00014\ \ \ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00016}00016\ \ \ \textcolor{keywordtype}{char}\ *encoded\ =\ \mbox{\hyperlink{morse_8c_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(arr,\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00017}00017\ \ \ \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00016}00016\ \ \ \textcolor{keywordtype}{char}\ *encoded\ =\ \mbox{\hyperlink{split__str_8h_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(arr,\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00017}00017\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00018}00018\ \ \ \textcolor{keywordflow}{return}\ encoded;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00019}00019\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00020}00020\ }
@@ -33,8 +33,8 @@
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00031}00031\ \ \ \ \ encoded-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]\ =\ encoded\_char;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00032}00032\ \ \ \ \ encoded-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i][encoded\_char\_len]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00033}00033\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00034}00034\ \ \ \textcolor{keywordtype}{char}\ *flattened\_encoded\_char\ =\ \mbox{\hyperlink{morse_8c_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(encoded,\ \textcolor{stringliteral}{"{}\ "{}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00035}00035\ \ \ \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(encoded);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00034}00034\ \ \ \textcolor{keywordtype}{char}\ *flattened\_encoded\_char\ =\ \mbox{\hyperlink{split__str_8h_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(encoded,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00035}00035\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(encoded);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00036}00036\ \ \ \textcolor{keywordflow}{return}\ flattened\_encoded\_char;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00037}00037\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00038}00038\ }
@@ -80,25 +80,25 @@
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00079}00079\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00080}00080\ }
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00082}\mbox{\hyperlink{morse_8h_a9e1ea6a4c071bef90e46b31d1b68bcc6}{00082}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{morse_8c_a9e1ea6a4c071bef90e46b31d1b68bcc6}{decode\_morse\_text}}(\mbox{\hyperlink{struct_node}{Node}}\ *start,\ \textcolor{keywordtype}{char}\ *morse\_text)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00083}00083\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(morse\_text,\ \textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00083}00083\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(morse\_text,\ \textcolor{charliteral}{'\(\backslash\)t'});}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00084}00084\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}};\ ++i)\ \{}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{char}\ *temp\ =\ \mbox{\hyperlink{morse_8c_a7246995b03b0c812f222f0bf25e8af22}{decode\_morse\_word}}(start,\ arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00086}00086\ \ \ \ \ free(arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00087}00087\ \ \ \ \ arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]\ =\ temp;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00088}00088\ \ \ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00090}00090\ \ \ \textcolor{keywordtype}{char}\ *decoded\ =\ \mbox{\hyperlink{morse_8c_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(arr,\ \textcolor{stringliteral}{"{}\ "{}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00091}00091\ \ \ \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00090}00090\ \ \ \textcolor{keywordtype}{char}\ *decoded\ =\ \mbox{\hyperlink{split__str_8h_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(arr,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00091}00091\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00092}00092\ \ \ \textcolor{keywordflow}{return}\ decoded;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00093}00093\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00094}00094\ }
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00096}\mbox{\hyperlink{morse_8h_a7246995b03b0c812f222f0bf25e8af22}{00096}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{morse_8c_a7246995b03b0c812f222f0bf25e8af22}{decode\_morse\_word}}(\mbox{\hyperlink{struct_node}{Node}}\ *start,\ \textcolor{keywordtype}{char}\ *morse\_word)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00097}00097\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(morse\_word,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00097}00097\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(morse\_word,\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00098}00098\ \ \ \textcolor{keywordtype}{char}\ *decoded\ =\ malloc((arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00099}00099\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}};\ ++i)}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00100}00100\ \ \ \ \ decoded[i]\ =\ \mbox{\hyperlink{morse_8c_ad32996a23bec64d72c9bc61cdd55a153}{decode\_morse\_char}}(start,\ arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i]);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00101}00101\ \ \ decoded[arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00102}00102\ \ \ \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00102}00102\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00103}00103\ \ \ \textcolor{keywordflow}{return}\ decoded;}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00104}00104\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00105}00105\ }
@@ -162,89 +162,29 @@
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00167}00167\ \ \ *node\ =\ \mbox{\hyperlink{morse_8c_a26ad42d8f17ace1dd43256561c6946f9}{init\_node}}();}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00168}00168\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00171}\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{00171}}\ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *arr,\ \textcolor{keywordtype}{char}\ delim)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00172}00172\ \ \ \textcolor{keywordtype}{int}\ ct\_len\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00173}00173\ \ \ \textcolor{keywordtype}{int}\ ct\_delim\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00174}00174\ \ \ \textcolor{keywordflow}{while}\ (arr[ct\_len]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[ct\_len]\ ==\ delim)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00176}00176\ \ \ \ \ \ \ ++ct\_delim;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00177}00177\ \ \ \ \ ++ct\_len;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00178}00178\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00171}\mbox{\hyperlink{morse_8h_af93142b17ebe1ba1b8f9b1d3aa932c95}{00171}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ *start)\ \{}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00172}00172\ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00174}00174\ \ \ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00175}00175\ \ \ free(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00176}00176\ \ \ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00177}00177\ \ \ free(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00178}00178\ \}}
 \DoxyCodeLine{\Hypertarget{morse_8c_source_l00179}00179\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00180}00180\ \ \ \textcolor{keywordtype}{int}\ ct\_split\_arr\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00181}00181\ \ \ \textcolor{keywordtype}{int}\ ct\_split\_arr\_len\ =\ ct\_delim\ +\ 1;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00182}00182\ \ \ \textcolor{keywordtype}{char}\ **split\_arr\ =\ malloc(ct\_split\_arr\_len\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00183}00183\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00184}00184\ \ \ \textcolor{keywordtype}{int}\ ct\_before\_delim\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00185}00185\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ ct\_len;\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[i]\ ==\ delim\ ||\ ct\_len\ ==\ i)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00187}00187\ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ and\ assign\ value\ for\ split\_arr\ 2d\ array}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00188}00188\ \ \ \ \ \ \ split\_arr[ct\_split\_arr]\ =}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{char}\ *)malloc(ct\_before\_delim\ +\ 1\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00190}00190\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ ct\_before\_delim;\ ++j)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00191}00191\ \ \ \ \ \ \ \ \ split\_arr[ct\_split\_arr][j]\ =\ arr[(i\ -\/\ ct\_before\_delim)\ +\ j];}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00192}00192\ \ \ \ \ \ \ split\_arr[ct\_split\_arr][ct\_before\_delim]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00193}00193\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00194}00194\ \ \ \ \ \ \ ct\_before\_delim\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00195}00195\ \ \ \ \ \ \ ++ct\_split\_arr;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00196}00196\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00197}00197\ \ \ \ \ \ \ ++ct\_before\_delim;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00198}00198\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00199}00199\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00201}00201\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\textcolor{keyword}{new}\ =\ malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_split__str}{Split\_str}}));}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00202}00202\ \ \ \textcolor{keyword}{new}-\/>len\ =\ ct\_split\_arr\_len;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00203}00203\ \ \ \textcolor{keyword}{new}-\/>arr\ =\ split\_arr;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00204}00204\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00205}00205\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00206}00206\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00208}\mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{00208}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(\mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}})\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00209}00209\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>len;\ ++i)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00210}00210\ \ \ \ \ free(\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>arr[i]);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00211}00211\ \ \ free(\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>arr);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00212}00212\ \ \ free(\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00213}00213\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00214}00214\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00216}\mbox{\hyperlink{morse_8h_a5278a18933a25196052f82d517a7fef1}{00216}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{morse_8c_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(\mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}},\ \textcolor{keywordtype}{char}\ *delim)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00217}00217\ \ \ \textcolor{keywordtype}{int}\ ct\_char\ =\ 1\ +\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>len;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00218}00218\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>len;\ ++i)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00219}00219\ \ \ \ \ ct\_char\ +=\ strlen(\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>arr[i]);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00220}00220\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00221}00221\ \ \ \textcolor{keywordtype}{char}\ *flattened\ =\ malloc(ct\_char\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00222}00222\ \ \ flattened[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00223}00223\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00224}00224\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>len;\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00225}00225\ \ \ \ \ strcat(flattened,\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>arr[i]);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}-\/>len\ -\/\ 1)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00227}00227\ \ \ \ \ \ \ strcat(flattened,\ delim);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00228}00228\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00229}00229\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00230}00230\ \ \ \textcolor{keywordflow}{return}\ flattened;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00231}00231\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00234}\mbox{\hyperlink{morse_8h_af93142b17ebe1ba1b8f9b1d3aa932c95}{00234}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ *start)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00235}00235\ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ NULL)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00236}00236\ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00237}00237\ \ \ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00238}00238\ \ \ free(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00239}00239\ \ \ \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00240}00240\ \ \ free(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00241}00241\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00242}00242\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00244}\mbox{\hyperlink{morse_8h_adabd687889b8ca651f58b07d40e2584e}{00244}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_adabd687889b8ca651f58b07d40e2584e}{dump\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ *start)\ \{\ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start,\ 0);\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00245}00245\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00247}\mbox{\hyperlink{morse_8h_ab4b5bd48b2bb985e8c692dc03ac672f2}{00247}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(\mbox{\hyperlink{struct_node}{Node}}\ *start,\ \textcolor{keywordtype}{int}\ counter)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00248}00248\ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ NULL)}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00250}00250\ \ \ printf(\textcolor{stringliteral}{"{}\%c\(\backslash\)n"{}},\ start-\/>\mbox{\hyperlink{struct_node_ac6027d2dbb9ac08b3b6729341c0bcf8f}{character}});}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00251}00251\ \ \ ++counter;}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00252}00252\ \ \ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}},\ counter);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00253}00253\ \ \ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}},\ counter);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00254}00254\ \}}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00255}00255\ }
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00257}\mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{00257}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_a56b10db5a572d6c1adfbbec2ea7b78a4}{print\_error\_and\_exit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ error\_code,\ \textcolor{keywordtype}{char}\ *description)\ \{}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00258}00258\ \ \ printf(\textcolor{stringliteral}{"{}Hiba:\ \%d\ -\/\ \%s\(\backslash\)n"{}},\ error\_code,\ description);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00259}00259\ \ \ exit(1);}
-\DoxyCodeLine{\Hypertarget{morse_8c_source_l00260}00260\ \}}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00181}\mbox{\hyperlink{morse_8h_adabd687889b8ca651f58b07d40e2584e}{00181}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_adabd687889b8ca651f58b07d40e2584e}{dump\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ *start)\ \{\ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start,\ 0);\ \}}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00184}\mbox{\hyperlink{morse_8h_ab4b5bd48b2bb985e8c692dc03ac672f2}{00184}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(\mbox{\hyperlink{struct_node}{Node}}\ *start,\ \textcolor{keywordtype}{int}\ counter)\ \{}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00185}00185\ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00187}00187\ \ \ printf(\textcolor{stringliteral}{"{}\%c\(\backslash\)n"{}},\ start-\/>\mbox{\hyperlink{struct_node_ac6027d2dbb9ac08b3b6729341c0bcf8f}{character}});}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00188}00188\ \ \ ++counter;}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00189}00189\ \ \ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start-\/>\mbox{\hyperlink{struct_node_a592ca41849d144cd853dc075459c7140}{dot}},\ counter);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00190}00190\ \ \ \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\_node}}(start-\/>\mbox{\hyperlink{struct_node_a2679ce9c13dc1ded358df5085fc63e7a}{dash}},\ counter);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00191}00191\ \}}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00194}\mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{00194}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{morse_8c_a56b10db5a572d6c1adfbbec2ea7b78a4}{print\_error\_and\_exit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ error\_code,\ \textcolor{keywordtype}{char}\ *description)\ \{}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00195}00195\ \ \ printf(\textcolor{stringliteral}{"{}Hiba:\ \%d\ -\/\ \%s\(\backslash\)n"{}},\ error\_code,\ description);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00196}00196\ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{morse_8c_source_l00197}00197\ \}}
 
 \end{DoxyCode}

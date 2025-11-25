@@ -1,6 +1,6 @@
 \doxysection{D\+:/bme/prog1/nagyhazi/src/morse.h File Reference}
 \hypertarget{morse_8h}{}\label{morse_8h}\index{D:/bme/prog1/nagyhazi/src/morse.h@{D:/bme/prog1/nagyhazi/src/morse.h}}
-{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+{\ttfamily \#include "{}split\+\_\+str.\+h"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
@@ -8,15 +8,11 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_node}{Node}}
-\item 
-struct \mbox{\hyperlink{struct_split__str}{Split\+\_\+str}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct Node \mbox{\hyperlink{morse_8h_a3b09f37e675bcd48a01bf22155996872}{Node}}
-\item 
-typedef struct Split\+\_\+str \mbox{\hyperlink{morse_8h_ade2f22df97f5da28efca74000ada5fa0}{Split\+\_\+str}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -32,12 +28,6 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8h_a9e1ea6a4c071bef90e46b
 char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8h_a7246995b03b0c812f222f0bf25e8af22}{decode\+\_\+morse\+\_\+word}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}morse\+\_\+word)
 \item 
 char \mbox{\hyperlink{morse_8h_ad32996a23bec64d72c9bc61cdd55a153}{decode\+\_\+morse\+\_\+char}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}code)
-\item 
-\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}} (const char \texorpdfstring{$\ast$}{*}arr, char delim)
-\item 
-void \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}})
-\item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8h_a5278a18933a25196052f82d517a7fef1}{flatten\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}}, char \texorpdfstring{$\ast$}{*}delim)
 \item 
 \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8h_a26ad42d8f17ace1dd43256561c6946f9}{init\+\_\+node}} (void)
 \item 
@@ -63,12 +53,6 @@ void \mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{print\+\_\+err
 \doxysubsubsection{\texorpdfstring{Node}{Node}}
 {\footnotesize\ttfamily \label{morse_8h_a3b09f37e675bcd48a01bf22155996872} 
 typedef struct Node Node}
-
-\Hypertarget{morse_8h_ade2f22df97f5da28efca74000ada5fa0}\index{morse.h@{morse.h}!Split\_str@{Split\_str}}
-\index{Split\_str@{Split\_str}!morse.h@{morse.h}}
-\doxysubsubsection{\texorpdfstring{Split\_str}{Split\_str}}
-{\footnotesize\ttfamily \label{morse_8h_ade2f22df97f5da28efca74000ada5fa0} 
-typedef struct Split\+\_\+str Split\+\_\+str}
 
 
 
@@ -235,7 +219,7 @@ Recursively prints morse tree nodes with indentation based on depth Helper funct
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{morse_8c_source_l00247}{247}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+Definition at line \mbox{\hyperlink{morse_8c_source_l00184}{184}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
 
 \Hypertarget{morse_8h_adabd687889b8ca651f58b07d40e2584e}\index{morse.h@{morse.h}!dump\_tree@{dump\_tree}}
 \index{dump\_tree@{dump\_tree}!morse.h@{morse.h}}
@@ -259,7 +243,7 @@ Prints a visual representation of the morse code tree structure Useful for debug
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{morse_8c_source_l00244}{244}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+Definition at line \mbox{\hyperlink{morse_8c_source_l00181}{181}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
 
 \Hypertarget{morse_8h_ae38df4717b4a9e35c06c14671de01494}\index{morse.h@{morse.h}!encode\_char@{encode\_char}}
 \index{encode\_char@{encode\_char}!morse.h@{morse.h}}
@@ -363,64 +347,6 @@ Encoded morse code string with characters separated by spaces, or NULL on error
 
 Definition at line \mbox{\hyperlink{morse_8c_source_l00022}{22}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
 
-\Hypertarget{morse_8h_a5278a18933a25196052f82d517a7fef1}\index{morse.h@{morse.h}!flatten\_split\_str@{flatten\_split\_str}}
-\index{flatten\_split\_str@{flatten\_split\_str}!morse.h@{morse.h}}
-\doxysubsubsection{\texorpdfstring{flatten\_split\_str()}{flatten\_split\_str()}}
-{\footnotesize\ttfamily \label{morse_8h_a5278a18933a25196052f82d517a7fef1} 
-char \texorpdfstring{$\ast$}{*} flatten\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{delim}{}\end{DoxyParamCaption})}
-
-
-
-
-
-Flattens a \doxylink{struct_split__str}{Split\+\_\+str} structure back into a single string Joins all parts together with the specified delimiter string between them The delimiter is not added after the final part 
-\begin{DoxyParams}{Parameters}
-{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure containing parts to be flattened \\
-\hline
-{\em delim} & Delimiter string to insert between parts \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Flattened string with parts separated by the delimiter
-\end{DoxyReturn}
-Flattens a \doxylink{struct_split__str}{Split\+\_\+str} structure back into a single string Joins all parts together with the specified delimiter string between them The delimiter is not added after the final part 
-\begin{DoxyParams}{Parameters}
-{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure containing parts to be flattened \\
-\hline
-{\em delim} & Delimiter string to insert between parts \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Flattened string with parts separated by the delimiter
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{morse_8c_source_l00216}{216}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
-
-\Hypertarget{morse_8h_a92823e60233ff90b7615eadeaae285bc}\index{morse.h@{morse.h}!free\_split\_str@{free\_split\_str}}
-\index{free\_split\_str@{free\_split\_str}!morse.h@{morse.h}}
-\doxysubsubsection{\texorpdfstring{free\_split\_str()}{free\_split\_str()}}
-{\footnotesize\ttfamily \label{morse_8h_a92823e60233ff90b7615eadeaae285bc} 
-void free\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{}\end{DoxyParamCaption})}
-
-
-
-
-
-Frees all memory allocated for a \doxylink{struct_split__str}{Split\+\_\+str} structure Deallocates each individual string in the array and the array itself 
-\begin{DoxyParams}{Parameters}
-{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure to be freed\\
-\hline
-\end{DoxyParams}
-Frees all memory allocated for a \doxylink{struct_split__str}{Split\+\_\+str} structure Deallocates each individual string in the array and the array itself 
-\begin{DoxyParams}{Parameters}
-{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure to be freed\\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{morse_8c_source_l00208}{208}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
-
 \Hypertarget{morse_8h_af93142b17ebe1ba1b8f9b1d3aa932c95}\index{morse.h@{morse.h}!free\_tree@{free\_tree}}
 \index{free\_tree@{free\_tree}!morse.h@{morse.h}}
 \doxysubsubsection{\texorpdfstring{free\_tree()}{free\_tree()}}
@@ -443,7 +369,7 @@ Recursively frees all memory allocated for a morse code tree Performs depth-\/fi
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{morse_8c_source_l00234}{234}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+Definition at line \mbox{\hyperlink{morse_8c_source_l00171}{171}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
 
 \Hypertarget{morse_8h_a26ad42d8f17ace1dd43256561c6946f9}\index{morse.h@{morse.h}!init\_node@{init\_node}}
 \index{init\_node@{init\_node}!morse.h@{morse.h}}
@@ -491,41 +417,7 @@ Prints an error message to standard output and terminates the program Used for c
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{morse_8c_source_l00257}{257}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
-
-\Hypertarget{morse_8h_aeb9f1be46de043e427ea01c1683ab089}\index{morse.h@{morse.h}!split\_str@{split\_str}}
-\index{split\_str@{split\_str}!morse.h@{morse.h}}
-\doxysubsubsection{\texorpdfstring{split\_str()}{split\_str()}}
-{\footnotesize\ttfamily \label{morse_8h_aeb9f1be46de043e427ea01c1683ab089} 
-\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} split\+\_\+str (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{char}]{delim}{}\end{DoxyParamCaption})}
-
-
-
-
-
-Splits a string into an array of substrings based on a delimiter character Creates a \doxylink{struct_split__str}{Split\+\_\+str} structure containing the array of parts and their count 
-\begin{DoxyParams}{Parameters}
-{\em arr} & String to be split into parts \\
-\hline
-{\em delim} & Delimiter character used to identify split points \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\doxylink{struct_split__str}{Split\+\_\+str} structure containing the split parts and their count
-\end{DoxyReturn}
-Splits a string into an array of substrings based on a delimiter character Creates a \doxylink{struct_split__str}{Split\+\_\+str} structure containing the array of parts and their count 
-\begin{DoxyParams}{Parameters}
-{\em arr} & String to be split into parts \\
-\hline
-{\em delim} & Delimiter character used to identify split points \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\doxylink{struct_split__str}{Split\+\_\+str} structure containing the split parts and their count
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{morse_8c_source_l00171}{171}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+Definition at line \mbox{\hyperlink{morse_8c_source_l00194}{194}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
 
 \Hypertarget{morse_8h_aba80b9e664caa5c5c820bae6b3eb230b}\index{morse.h@{morse.h}!try\_add\_node@{try\_add\_node}}
 \index{try\_add\_node@{try\_add\_node}!morse.h@{morse.h}}

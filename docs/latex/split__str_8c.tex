@@ -1,0 +1,84 @@
+\doxysection{D\+:/bme/prog1/nagyhazi/src/split\+\_\+str.c File Reference}
+\hypertarget{split__str_8c}{}\label{split__str_8c}\index{D:/bme/prog1/nagyhazi/src/split\_str.c@{D:/bme/prog1/nagyhazi/src/split\_str.c}}
+{\ttfamily \#include "{}split\+\_\+str.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{split__str_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}} (const char \texorpdfstring{$\ast$}{*}arr, char delim)
+\item 
+void \mbox{\hyperlink{split__str_8c_a92823e60233ff90b7615eadeaae285bc}{free\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{split__str_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}})
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{split__str_8c_a5278a18933a25196052f82d517a7fef1}{flatten\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{split__str_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}}, char \texorpdfstring{$\ast$}{*}delim)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{split__str_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{split__str_8c_a5278a18933a25196052f82d517a7fef1}\index{split\_str.c@{split\_str.c}!flatten\_split\_str@{flatten\_split\_str}}
+\index{flatten\_split\_str@{flatten\_split\_str}!split\_str.c@{split\_str.c}}
+\doxysubsubsection{\texorpdfstring{flatten\_split\_str()}{flatten\_split\_str()}}
+{\footnotesize\ttfamily \label{split__str_8c_a5278a18933a25196052f82d517a7fef1} 
+char \texorpdfstring{$\ast$}{*} flatten\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{delim}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Flattens a \doxylink{struct_split__str}{Split\+\_\+str} structure back into a single string Joins all parts together with the specified delimiter string between them The delimiter is not added after the final part 
+\begin{DoxyParams}{Parameters}
+{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure containing parts to be flattened \\
+\hline
+{\em delim} & Delimiter string to insert between parts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Flattened string with parts separated by the delimiter
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{split__str_8c_source_l00053}{53}} of file \mbox{\hyperlink{split__str_8c_source}{split\+\_\+str.\+c}}.
+
+\Hypertarget{split__str_8c_a92823e60233ff90b7615eadeaae285bc}\index{split\_str.c@{split\_str.c}!free\_split\_str@{free\_split\_str}}
+\index{free\_split\_str@{free\_split\_str}!split\_str.c@{split\_str.c}}
+\doxysubsubsection{\texorpdfstring{free\_split\_str()}{free\_split\_str()}}
+{\footnotesize\ttfamily \label{split__str_8c_a92823e60233ff90b7615eadeaae285bc} 
+void free\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Frees all memory allocated for a \doxylink{struct_split__str}{Split\+\_\+str} structure Deallocates each individual string in the array and the array itself 
+\begin{DoxyParams}{Parameters}
+{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure to be freed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{split__str_8c_source_l00045}{45}} of file \mbox{\hyperlink{split__str_8c_source}{split\+\_\+str.\+c}}.
+
+\Hypertarget{split__str_8c_aeb9f1be46de043e427ea01c1683ab089}\index{split\_str.c@{split\_str.c}!split\_str@{split\_str}}
+\index{split\_str@{split\_str}!split\_str.c@{split\_str.c}}
+\doxysubsubsection{\texorpdfstring{split\_str()}{split\_str()}}
+{\footnotesize\ttfamily \label{split__str_8c_aeb9f1be46de043e427ea01c1683ab089} 
+\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} split\+\_\+str (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{char}]{delim}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Splits a string into an array of substrings based on a delimiter character Creates a \doxylink{struct_split__str}{Split\+\_\+str} structure containing the array of parts and their count 
+\begin{DoxyParams}{Parameters}
+{\em arr} & String to be split into parts \\
+\hline
+{\em delim} & Delimiter character used to identify split points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_split__str}{Split\+\_\+str} structure containing the split parts and their count
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{split__str_8c_source_l00008}{8}} of file \mbox{\hyperlink{split__str_8c_source}{split\+\_\+str.\+c}}.
+

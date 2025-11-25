@@ -147,7 +147,7 @@
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00143}00143\ \}}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00144}00144\ }
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00145}\mbox{\hyperlink{tests_8h_aa86edfd2c809d144b3bed853a46de627}{00145}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8c_aa86edfd2c809d144b3bed853a46de627}{test\_split\_str}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00146}00146\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *result\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}a\ b\ c"{}},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00146}00146\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *result\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}a\ b\ c"{}},\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00147}00147\ \ \ assert(result\ !=\ NULL);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00148}00148\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *expected\ =\ \mbox{\hyperlink{tests_8c_a7400d154af15013efc484fb924d48e10}{mock\_split\_str}}();}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00149}00149\ \ \ assert(expected\ !=\ NULL);}
@@ -157,26 +157,26 @@
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00153}00153\ \ \ assert(strcmp(result-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[1],\ expected-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[1])\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00154}00154\ \ \ assert(strcmp(result-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[2],\ expected-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[2])\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00156}00156\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(result);}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00157}00157\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(expected);}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00156}00156\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(result);}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00157}00157\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(expected);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00158}00158\ \}}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00159}00159\ }
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00160}\mbox{\hyperlink{tests_8h_af129c54fd68c9645c12958ac89f33a1e}{00160}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8c_af129c54fd68c9645c12958ac89f33a1e}{test\_free\_split\_str}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00161}00161\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *s\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}test\ data\ split"{}},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00161}00161\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *s\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}test\ data\ split"{}},\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00162}00162\ \ \ assert(s\ !=\ NULL);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00163}00163\ \ \ assert(s-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00164}00164\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(s);}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00164}00164\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(s);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00165}00165\ \}}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00166}00166\ }
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00167}\mbox{\hyperlink{tests_8h_a8fbde2ea22e6fe8d35ebdc3b34d9b01e}{00167}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8c_a8fbde2ea22e6fe8d35ebdc3b34d9b01e}{test\_flatten\_split\_str}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00168}00168\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *s\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}a\ b\ c"{}},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00168}00168\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *s\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(\textcolor{stringliteral}{"{}a\ b\ c"{}},\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00169}00169\ \ \ assert(s\ !=\ NULL);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00170}00170\ \ \ assert(s-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00171}00171\ \ \ \textcolor{keywordtype}{char}\ *flattened\ =\ \mbox{\hyperlink{morse_8h_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(s,\ \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00171}00171\ \ \ \textcolor{keywordtype}{char}\ *flattened\ =\ \mbox{\hyperlink{split__str_8h_a5278a18933a25196052f82d517a7fef1}{flatten\_split\_str}}(s,\ \textcolor{stringliteral}{"{}-\/"{}});}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00172}00172\ \ \ assert(flattened\ !=\ NULL);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00173}00173\ \ \ assert(strcmp(flattened,\ \textcolor{stringliteral}{"{}a-\/b-\/c"{}})\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00174}00174\ \ \ free(flattened);}
-\DoxyCodeLine{\Hypertarget{tests_8c_source_l00175}00175\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(s);}
+\DoxyCodeLine{\Hypertarget{tests_8c_source_l00175}00175\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(s);}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00176}00176\ \}}
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00177}00177\ }
 \DoxyCodeLine{\Hypertarget{tests_8c_source_l00178}\mbox{\hyperlink{tests_8h_a0120540b2f460b77ddfb789e9068b904}{00178}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8c_a0120540b2f460b77ddfb789e9068b904}{test\_init\_node}}(\textcolor{keywordtype}{void})\ \{}

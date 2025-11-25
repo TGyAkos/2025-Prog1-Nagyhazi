@@ -10,21 +10,21 @@
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00008}\mbox{\hyperlink{file__handling_8h_a3605f5a2ca991ddab272fffe18e05432}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{file__handling_8c_a3605f5a2ca991ddab272fffe18e05432}{file\_to\_morse\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ **start,\ \textcolor{keywordtype}{char}\ *filename)\ \{}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00009}00009\ \ \ \textcolor{keywordtype}{char}\ *lines\ =\ \mbox{\hyperlink{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e}{read\_all\_lines}}(filename);}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00010}00010\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(lines,\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00010}00010\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(lines,\ \textcolor{charliteral}{'\(\backslash\)n'});}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00011}00011\ \ \ free(lines);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00012}00012\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}};\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *code\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i],\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *code\ =\ \mbox{\hyperlink{split__str_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i],\ \textcolor{charliteral}{'\ '});}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (code-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}\ !=\ 2)\ \{}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00015}00015\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00016}00016\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00015}00015\ \ \ \ \ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00016}00016\ \ \ \ \ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(*start);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00018}00018\ \ \ \ \ \ \ free(*start);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00019}00019\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{print\_error\_and\_exit}}(3,\ \textcolor{stringliteral}{"{}Helytelen\ kodtabla\ formatum"{}});}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00020}00020\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{morse_8h_a636dfd59b69051f41937be8b92b8b5ce}{add\_generate\_morse}}(start,\ code-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[1],\ code-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[0][0]);}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00023}00023\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00024}00024\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00024}00024\ \ \ \mbox{\hyperlink{split__str_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00025}00025\ \}}
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00028}\mbox{\hyperlink{file__handling_8h_af0bb3faedcf0181f928ab9302cd00e72}{00028}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{file__handling_8c_af0bb3faedcf0181f928ab9302cd00e72}{write\_to\_file}}(\textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{char}\ *filename)\ \{}

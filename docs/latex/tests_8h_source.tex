@@ -9,45 +9,50 @@
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ NAGYHAZI\_TESTS\_H}}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ NAGYHAZI\_TESTS\_H}}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}debugmalloc.h"{}}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{morse_8h}{morse.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{file__handling_8h}{file\_handling.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <assert.h>}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifdef\ DEBUG\_MALLOC}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}debugmalloc.h"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00010}00010\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DEBUG\_MALLOC}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{file__handling_8h}{file\_handling.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{morse_8h}{morse.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{split__str_8h}{split\_str.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00016}00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ae9bbb2f5bb69f73e92c761f83223285a}{run\_all\_tests}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00018}00018\ \textcolor{comment}{//\ Mock\ functions}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00019}00019\ \mbox{\hyperlink{struct_node}{Node}}\ *\mbox{\hyperlink{tests_8h_aa68cbf2520561fe67036f5b4f872d0be}{mock\_tree}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00020}00020\ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\mbox{\hyperlink{tests_8h_a7400d154af15013efc484fb924d48e10}{mock\_split\_str}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00022}00022\ \textcolor{comment}{//\ Morse\ tests}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00023}00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a0b925d5c1d4da5dc1885960e0e1658c8}{test\_encode\_text}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00024}00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a256b87ae533a7159d1e45d1347551f1f}{test\_encode\_word}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00025}00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ac02601fb7f5d69399f37262e9d158425}{test\_encode\_char}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ae9bbb2f5bb69f73e92c761f83223285a}{run\_all\_tests}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00023}00023\ \textcolor{comment}{//\ Mock\ functions}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00024}00024\ \mbox{\hyperlink{struct_node}{Node}}\ *\mbox{\hyperlink{tests_8h_aa68cbf2520561fe67036f5b4f872d0be}{mock\_tree}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00025}00025\ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *\mbox{\hyperlink{tests_8h_a7400d154af15013efc484fb924d48e10}{mock\_split\_str}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00027}00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a4d226c518d88589789f1c29f7148d59f}{test\_decode\_text}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00028}00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_aa89965a4549fa4e2518c01a23e2c2456}{test\_decode\_word}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a8bf7a83125d36242590ddaeda51cb74a}{test\_decode\_char}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00031}00031\ \textcolor{comment}{//\ String\ splitter\ tests}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00032}00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_aa86edfd2c809d144b3bed853a46de627}{test\_split\_str}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00033}00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_af129c54fd68c9645c12958ac89f33a1e}{test\_free\_split\_str}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00034}00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a8fbde2ea22e6fe8d35ebdc3b34d9b01e}{test\_flatten\_split\_str}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00027}00027\ \textcolor{comment}{//\ Morse\ tests}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00028}00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a0b925d5c1d4da5dc1885960e0e1658c8}{test\_encode\_text}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a256b87ae533a7159d1e45d1347551f1f}{test\_encode\_word}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00030}00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ac02601fb7f5d69399f37262e9d158425}{test\_encode\_char}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00032}00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a4d226c518d88589789f1c29f7148d59f}{test\_decode\_text}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00033}00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_aa89965a4549fa4e2518c01a23e2c2456}{test\_decode\_word}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00034}00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a8bf7a83125d36242590ddaeda51cb74a}{test\_decode\_char}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00036}00036\ \textcolor{comment}{//\ Test\ basic\ morse\ binary\ tree\ functions}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00037}00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a0120540b2f460b77ddfb789e9068b904}{test\_init\_node}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00038}00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ab59c02c8a21f80e6ea6c3d88c55762f7}{test\_add\_generate\_morse}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00039}00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a9f522b90083fb1451b9d50880f18b2d5}{test\_free\_tree}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00036}00036\ \textcolor{comment}{//\ String\ splitter\ tests}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00037}00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_aa86edfd2c809d144b3bed853a46de627}{test\_split\_str}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00038}00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_af129c54fd68c9645c12958ac89f33a1e}{test\_free\_split\_str}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00039}00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a8fbde2ea22e6fe8d35ebdc3b34d9b01e}{test\_flatten\_split\_str}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{\Hypertarget{tests_8h_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00041}00041\ \textcolor{comment}{//\ File\ Handling\ tests}}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00042}00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a2cc7336c6e9333907934deecee23d427}{test\_file\_to\_morse\_tree}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00043}00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a911e0bdf780f37ec1de03ce3f5c80662}{test\_write\_to\_file}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00044}00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a36a921a6c1da9aaf071250f133c03f8a}{test\_read\_all\_lines}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00045}00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a495302dd1af5698bebd39cc611d7de7e}{test\_remove\_new\_lines\_chars}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{tests_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NAGYHAZI\_TESTS\_H}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00041}00041\ \textcolor{comment}{//\ Test\ basic\ morse\ binary\ tree\ functions}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00042}00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a0120540b2f460b77ddfb789e9068b904}{test\_init\_node}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00043}00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_ab59c02c8a21f80e6ea6c3d88c55762f7}{test\_add\_generate\_morse}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00044}00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a9f522b90083fb1451b9d50880f18b2d5}{test\_free\_tree}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00046}00046\ \textcolor{comment}{//\ File\ Handling\ tests}}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00047}00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a2cc7336c6e9333907934deecee23d427}{test\_file\_to\_morse\_tree}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00048}00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a911e0bdf780f37ec1de03ce3f5c80662}{test\_write\_to\_file}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a36a921a6c1da9aaf071250f133c03f8a}{test\_read\_all\_lines}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00050}00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tests_8h_a495302dd1af5698bebd39cc611d7de7e}{test\_remove\_new\_lines\_chars}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{tests_8h_source_l00052}00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NAGYHAZI\_TESTS\_H}}
 
 \end{DoxyCode}
