@@ -25,15 +25,16 @@ void file_to_morse_tree(Node **start, char *filename) {
 }
 
 /** @copydoc write_to_file */
-void write_to_file(char *text, char *filename) {
+int write_to_file(char *text, char *filename) {
   FILE *checkfp = fopen(filename, "r");
   if (checkfp != NULL) {
     fclose(checkfp);
-    print_error_and_exit(4, "A kimeneti fajl mar letezik");
+    return 1;
   }
   FILE *fptr = fopen(filename, "w");
   fprintf(fptr, "%s", text);
   fclose(fptr);
+  return 0;
 }
 
 /** @copydoc remove_new_line_chars */

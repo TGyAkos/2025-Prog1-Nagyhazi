@@ -216,8 +216,8 @@ void test_file_to_morse_tree(void) {
   assert(root != NULL);
 
   assert(decode_morse_char(root, ".-") == 'a');
-  // assert(decode_morse_char(root, "..") == 'b');
-  // assert(decode_morse_char(root, "--") == 'c');
+  assert(decode_morse_char(root, "..") == 'b');
+  assert(decode_morse_char(root, "--") == 'c');
 
   free_tree(root);
   free(root);

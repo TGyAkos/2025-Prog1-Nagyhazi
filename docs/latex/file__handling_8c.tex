@@ -1,0 +1,105 @@
+\doxysection{D\+:/bme/prog1/nagyhazi/src/file\+\_\+handling.c File Reference}
+\hypertarget{file__handling_8c}{}\label{file__handling_8c}\index{D:/bme/prog1/nagyhazi/src/file\_handling.c@{D:/bme/prog1/nagyhazi/src/file\_handling.c}}
+{\ttfamily \#include "{}file\+\_\+handling.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{file__handling_8c_a3605f5a2ca991ddab272fffe18e05432}{file\+\_\+to\+\_\+morse\+\_\+tree}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+int \mbox{\hyperlink{file__handling_8c_af0bb3faedcf0181f928ab9302cd00e72}{write\+\_\+to\+\_\+file}} (char \texorpdfstring{$\ast$}{*}text, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+void \mbox{\hyperlink{file__handling_8c_aa9a1689587e14205272cbce26592a474}{remove\+\_\+new\+\_\+line\+\_\+chars}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e}{read\+\_\+all\+\_\+lines}} (char \texorpdfstring{$\ast$}{*}filename)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{file__handling_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{file__handling_8c_a3605f5a2ca991ddab272fffe18e05432}\index{file\_handling.c@{file\_handling.c}!file\_to\_morse\_tree@{file\_to\_morse\_tree}}
+\index{file\_to\_morse\_tree@{file\_to\_morse\_tree}!file\_handling.c@{file\_handling.c}}
+\doxysubsubsection{\texorpdfstring{file\_to\_morse\_tree()}{file\_to\_morse\_tree()}}
+{\footnotesize\ttfamily \label{file__handling_8c_a3605f5a2ca991ddab272fffe18e05432} 
+void file\+\_\+to\+\_\+morse\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Reads morse code definitions from a file and builds a morse code binary tree The file should contain lines with format\+: character morse\+\_\+code Each line consists of a single character, a space, and its morse code (dots and dashes) For example\+: a .-\/ b -\/.. c -\/.-\/. 
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the root node of the morse tree to be populated \\
+\hline
+{\em filename} & Path to the file containing morse code definitions\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{file__handling_8c_source_l00008}{8}} of file \mbox{\hyperlink{file__handling_8c_source}{file\+\_\+handling.\+c}}.
+
+\Hypertarget{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e}\index{file\_handling.c@{file\_handling.c}!read\_all\_lines@{read\_all\_lines}}
+\index{read\_all\_lines@{read\_all\_lines}!file\_handling.c@{file\_handling.c}}
+\doxysubsubsection{\texorpdfstring{read\_all\_lines()}{read\_all\_lines()}}
+{\footnotesize\ttfamily \label{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e} 
+char \texorpdfstring{$\ast$}{*} read\+\_\+all\+\_\+lines (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Reads all lines from a file into a single dynamically allocated string Preserves newline characters from the file in the returned string Removes carriage return characters that may be present on Windows systems 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the file to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String containing all file contents, or NULL if file cannot be opened
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file__handling_8c_source_l00060}{60}} of file \mbox{\hyperlink{file__handling_8c_source}{file\+\_\+handling.\+c}}.
+
+\Hypertarget{file__handling_8c_aa9a1689587e14205272cbce26592a474}\index{file\_handling.c@{file\_handling.c}!remove\_new\_line\_chars@{remove\_new\_line\_chars}}
+\index{remove\_new\_line\_chars@{remove\_new\_line\_chars}!file\_handling.c@{file\_handling.c}}
+\doxysubsubsection{\texorpdfstring{remove\_new\_line\_chars()}{remove\_new\_line\_chars()}}
+{\footnotesize\ttfamily \label{file__handling_8c_aa9a1689587e14205272cbce26592a474} 
+void remove\+\_\+new\+\_\+line\+\_\+chars (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Removes newline and carriage return characters from a string Replaces \textquotesingle{}\textbackslash{}n\textquotesingle{} and \textquotesingle{}\textbackslash{}r\textquotesingle{} characters with spaces to clean up text Modifies the string in place by creating a new cleaned string 
+\begin{DoxyParams}{Parameters}
+{\em str} & Pointer to a string pointer to be modified with cleaned content\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{file__handling_8c_source_l00041}{41}} of file \mbox{\hyperlink{file__handling_8c_source}{file\+\_\+handling.\+c}}.
+
+\Hypertarget{file__handling_8c_af0bb3faedcf0181f928ab9302cd00e72}\index{file\_handling.c@{file\_handling.c}!write\_to\_file@{write\_to\_file}}
+\index{write\_to\_file@{write\_to\_file}!file\_handling.c@{file\_handling.c}}
+\doxysubsubsection{\texorpdfstring{write\_to\_file()}{write\_to\_file()}}
+{\footnotesize\ttfamily \label{file__handling_8c_af0bb3faedcf0181f928ab9302cd00e72} 
+int write\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Writes text content to a file, creating the file if it does not exist If the file already exists, the function will exit with an error 
+\begin{DoxyParams}{Parameters}
+{\em text} & Text content string to be written to the file \\
+\hline
+{\em filename} & Path where the file should be created and written to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an error occurs, otherwise 0 on success
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file__handling_8c_source_l00028}{28}} of file \mbox{\hyperlink{file__handling_8c_source}{file\+\_\+handling.\+c}}.
+

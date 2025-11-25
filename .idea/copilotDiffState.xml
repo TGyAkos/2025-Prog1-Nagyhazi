@@ -21,15 +21,6 @@
             </PendingDiffInfo>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/tests.h">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/src/tests.h" />
-              <option name="originalContent" value="//&#10;// Created by User01 on 11/17/2025.&#10;//&#10;&#10;#ifndef NAGYHAZI_TESTS_H&#10;#define NAGYHAZI_TESTS_H&#10;&#10;#include &quot;morse.h&quot;&#10;#include &quot;file_handling.h&quot;&#10;#include &quot;debugmalloc.h&quot;&#10;#include &lt;assert.h&gt;&#10;#include &lt;stdio.h&gt;&#10;#include &lt;stdlib.h&gt;&#10;#include &lt;string.h&gt;&#10;&#10;void run_all_tests(void);&#10;&#10;// Mock functions&#10;Node *mock_tree(void);&#10;Split_str *mock_split_str(void);&#10;&#10;// Morse tests&#10;void test_encode_text(void);&#10;void test_encode_word(void);&#10;void test_encode_char(void);&#10;&#10;void test_decode_text(void);&#10;void test_decode_word(void);&#10;void test_decode_char(void);&#10;&#10;// String splitter tests&#10;void test_split_str(void);&#10;void test_free_split_str(void);&#10;void test_flatten_split_str(void);&#10;&#10;// Test basic morse binary tree functions&#10;void test_init_node(void);&#10;void test_add_generate_morse(void);&#10;void test_free_tree(void);&#10;&#10;// File Handling tests&#10;void test_file_to_morse_tree(void);&#10;void test_write_to_file(void);&#10;void test_read_all_lines(void);&#10;void test_remove_new_lines_chars(void);&#10;&#10;#endif // NAGYHAZI_TESTS_H&#10;" />
-              <option name="updatedContent" value="//&#10;// Created by User01 on 11/17/2025.&#10;//&#10;&#10;#ifndef NAGYHAZI_TESTS_H&#10;#define NAGYHAZI_TESTS_H&#10;&#10;#include &quot;morse.h&quot;&#10;#include &quot;file_handling.h&quot;&#10;#include &quot;debugmalloc.h&quot;&#10;#include &lt;assert.h&gt;&#10;#include &lt;stdio.h&gt;&#10;#include &lt;stdlib.h&gt;&#10;#include &lt;string.h&gt;&#10;&#10;void run_all_tests(void);&#10;&#10;// Mock functions&#10;Node *mock_tree(void);&#10;Split_str *mock_split_str(void);&#10;&#10;// Morse tests&#10;void test_encode_text(void);&#10;void test_encode_word(void);&#10;void test_encode_char(void);&#10;&#10;void test_decode_text(void);&#10;void test_decode_word(void);&#10;void test_decode_char(void);&#10;&#10;// String splitter tests&#10;void test_split_str(void);&#10;void test_free_split_str(void);&#10;void test_flatten_split_str(void);&#10;&#10;// Test basic morse binary tree functions&#10;void test_init_node(void);&#10;void test_add_generate_morse(void);&#10;void test_free_tree(void);&#10;&#10;// File Handling tests&#10;void test_file_to_morse_tree(void);&#10;void test_write_to_file(void);&#10;void test_read_all_lines(void);&#10;void test_remove_new_lines_chars(void);&#10;&#10;#endif // NAGYHAZI_TESTS_H" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

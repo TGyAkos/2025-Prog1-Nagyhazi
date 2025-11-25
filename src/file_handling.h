@@ -25,8 +25,9 @@ void file_to_morse_tree(Node **start, char *filename);
  * If the file already exists, the function will exit with an error
  * @param text Text content string to be written to the file
  * @param filename Path where the file should be created and written to
+ * @return 1 if an error occurs, otherwise 0 on success
  */
-void write_to_file(char *text, char *filename);
+int write_to_file(char *text, char *filename);
 
 /**
  * Reads all lines from a file into a single dynamically allocated string

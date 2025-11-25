@@ -1,0 +1,286 @@
+\begin{theindex}
+
+  \item {add\_generate\_morse}
+    \subitem {morse.c}, \hyperpage{19}
+    \subitem {morse.h}, \hyperpage{28}
+  \item {arr}
+    \subitem {Split\_str}, \hyperpage{10}
+
+  \indexspace
+
+  \item {character}
+    \subitem {Node}, \hyperpage{9}
+
+  \indexspace
+
+  \item {D:/bme/prog1/nagyhazi/src Directory Reference}, \hyperpage{7}
+  \item {D:/bme/prog1/nagyhazi/src/file\_handling.c}, \hyperpage{11}, 
+		\hyperpage{13}
+  \item {D:/bme/prog1/nagyhazi/src/file\_handling.h}, \hyperpage{14}, 
+		\hyperpage{16}
+  \item {D:/bme/prog1/nagyhazi/src/main.c}, \hyperpage{17, 18}
+  \item {D:/bme/prog1/nagyhazi/src/morse.c}, \hyperpage{18}, 
+		\hyperpage{25}
+  \item {D:/bme/prog1/nagyhazi/src/morse.h}, \hyperpage{27}, 
+		\hyperpage{37}
+  \item {D:/bme/prog1/nagyhazi/src/tests.c}, \hyperpage{38}, 
+		\hyperpage{42}
+  \item {D:/bme/prog1/nagyhazi/src/tests.h}, \hyperpage{45}, 
+		\hyperpage{48}
+  \item {dash}
+    \subitem {Node}, \hyperpage{9}
+  \item {decode\_morse\_char}
+    \subitem {morse.c}, \hyperpage{19}
+    \subitem {morse.h}, \hyperpage{29}
+  \item {decode\_morse\_text}
+    \subitem {morse.c}, \hyperpage{19}
+    \subitem {morse.h}, \hyperpage{29}
+  \item {decode\_morse\_word}
+    \subitem {morse.c}, \hyperpage{20}
+    \subitem {morse.h}, \hyperpage{30}
+  \item {dot}
+    \subitem {Node}, \hyperpage{9}
+  \item {dump\_node}
+    \subitem {morse.c}, \hyperpage{20}
+    \subitem {morse.h}, \hyperpage{31}
+  \item {dump\_tree}
+    \subitem {morse.c}, \hyperpage{21}
+    \subitem {morse.h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {encode\_char}
+    \subitem {morse.c}, \hyperpage{21}
+    \subitem {morse.h}, \hyperpage{32}
+  \item {encode\_text}
+    \subitem {morse.c}, \hyperpage{21}
+    \subitem {morse.h}, \hyperpage{32}
+  \item {encode\_word}
+    \subitem {morse.c}, \hyperpage{22}
+    \subitem {morse.h}, \hyperpage{33}
+
+  \indexspace
+
+  \item {file\_handling.c}
+    \subitem {file\_to\_morse\_tree}, \hyperpage{11}
+    \subitem {read\_all\_lines}, \hyperpage{11}
+    \subitem {remove\_new\_line\_chars}, \hyperpage{12}
+    \subitem {write\_to\_file}, \hyperpage{12}
+  \item {file\_handling.h}
+    \subitem {file\_to\_morse\_tree}, \hyperpage{14}
+    \subitem {read\_all\_lines}, \hyperpage{15}
+    \subitem {remove\_new\_line\_chars}, \hyperpage{15}
+    \subitem {write\_to\_file}, \hyperpage{16}
+  \item {file\_to\_morse\_tree}
+    \subitem {file\_handling.c}, \hyperpage{11}
+    \subitem {file\_handling.h}, \hyperpage{14}
+  \item {flatten\_split\_str}
+    \subitem {morse.c}, \hyperpage{22}
+    \subitem {morse.h}, \hyperpage{34}
+  \item {free\_split\_str}
+    \subitem {morse.c}, \hyperpage{22}
+    \subitem {morse.h}, \hyperpage{34}
+  \item {free\_tree}
+    \subitem {morse.c}, \hyperpage{23}
+    \subitem {morse.h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {init\_node}
+    \subitem {morse.c}, \hyperpage{23}
+    \subitem {morse.h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {len}
+    \subitem {Split\_str}, \hyperpage{10}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{17}
+  \item {main.c}
+    \subitem {main}, \hyperpage{17}
+    \subitem {NDEBUG}, \hyperpage{17}
+  \item {mock\_split\_str}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{45}
+  \item {mock\_tree}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{45}
+  \item {morse.c}
+    \subitem {add\_generate\_morse}, \hyperpage{19}
+    \subitem {decode\_morse\_char}, \hyperpage{19}
+    \subitem {decode\_morse\_text}, \hyperpage{19}
+    \subitem {decode\_morse\_word}, \hyperpage{20}
+    \subitem {dump\_node}, \hyperpage{20}
+    \subitem {dump\_tree}, \hyperpage{21}
+    \subitem {encode\_char}, \hyperpage{21}
+    \subitem {encode\_text}, \hyperpage{21}
+    \subitem {encode\_word}, \hyperpage{22}
+    \subitem {flatten\_split\_str}, \hyperpage{22}
+    \subitem {free\_split\_str}, \hyperpage{22}
+    \subitem {free\_tree}, \hyperpage{23}
+    \subitem {init\_node}, \hyperpage{23}
+    \subitem {print\_error\_and\_exit}, \hyperpage{23}
+    \subitem {split\_str}, \hyperpage{24}
+    \subitem {try\_add\_node}, \hyperpage{24}
+  \item {morse.h}
+    \subitem {add\_generate\_morse}, \hyperpage{28}
+    \subitem {decode\_morse\_char}, \hyperpage{29}
+    \subitem {decode\_morse\_text}, \hyperpage{29}
+    \subitem {decode\_morse\_word}, \hyperpage{30}
+    \subitem {dump\_node}, \hyperpage{31}
+    \subitem {dump\_tree}, \hyperpage{31}
+    \subitem {encode\_char}, \hyperpage{32}
+    \subitem {encode\_text}, \hyperpage{32}
+    \subitem {encode\_word}, \hyperpage{33}
+    \subitem {flatten\_split\_str}, \hyperpage{34}
+    \subitem {free\_split\_str}, \hyperpage{34}
+    \subitem {free\_tree}, \hyperpage{35}
+    \subitem {init\_node}, \hyperpage{35}
+    \subitem {Node}, \hyperpage{28}
+    \subitem {print\_error\_and\_exit}, \hyperpage{35}
+    \subitem {Split\_str}, \hyperpage{28}
+    \subitem {split\_str}, \hyperpage{36}
+    \subitem {try\_add\_node}, \hyperpage{37}
+
+  \indexspace
+
+  \item {NDEBUG}
+    \subitem {main.c}, \hyperpage{17}
+  \item {Node}, \hyperpage{9}
+    \subitem {character}, \hyperpage{9}
+    \subitem {dash}, \hyperpage{9}
+    \subitem {dot}, \hyperpage{9}
+    \subitem {morse.h}, \hyperpage{28}
+
+  \indexspace
+
+  \item {print\_error\_and\_exit}
+    \subitem {morse.c}, \hyperpage{23}
+    \subitem {morse.h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {read\_all\_lines}
+    \subitem {file\_handling.c}, \hyperpage{11}
+    \subitem {file\_handling.h}, \hyperpage{15}
+  \item {remove\_new\_line\_chars}
+    \subitem {file\_handling.c}, \hyperpage{12}
+    \subitem {file\_handling.h}, \hyperpage{15}
+  \item {run\_all\_tests}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{46}
+
+  \indexspace
+
+  \item {Split\_str}, \hyperpage{10}
+    \subitem {arr}, \hyperpage{10}
+    \subitem {len}, \hyperpage{10}
+    \subitem {morse.h}, \hyperpage{28}
+  \item {split\_str}
+    \subitem {morse.c}, \hyperpage{24}
+    \subitem {morse.h}, \hyperpage{36}
+
+  \indexspace
+
+  \item {test\_add\_generate\_morse}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_decode\_char}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_decode\_text}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_decode\_word}
+    \subitem {tests.c}, \hyperpage{39}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_encode\_char}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_encode\_text}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{46}
+  \item {test\_encode\_word}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_file\_to\_morse\_tree}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_flatten\_split\_str}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_free\_split\_str}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_free\_tree}
+    \subitem {tests.c}, \hyperpage{40}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_init\_node}
+    \subitem {tests.c}, \hyperpage{41}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_read\_all\_lines}
+    \subitem {tests.c}, \hyperpage{41}
+    \subitem {tests.h}, \hyperpage{47}
+  \item {test\_remove\_new\_lines\_chars}
+    \subitem {tests.c}, \hyperpage{41}
+    \subitem {tests.h}, \hyperpage{48}
+  \item {test\_split\_str}
+    \subitem {tests.c}, \hyperpage{41}
+    \subitem {tests.h}, \hyperpage{48}
+  \item {test\_write\_to\_file}
+    \subitem {tests.c}, \hyperpage{41}
+    \subitem {tests.h}, \hyperpage{48}
+  \item {tests.c}
+    \subitem {mock\_split\_str}, \hyperpage{39}
+    \subitem {mock\_tree}, \hyperpage{39}
+    \subitem {run\_all\_tests}, \hyperpage{39}
+    \subitem {test\_add\_generate\_morse}, \hyperpage{39}
+    \subitem {test\_decode\_char}, \hyperpage{39}
+    \subitem {test\_decode\_text}, \hyperpage{39}
+    \subitem {test\_decode\_word}, \hyperpage{39}
+    \subitem {test\_encode\_char}, \hyperpage{40}
+    \subitem {test\_encode\_text}, \hyperpage{40}
+    \subitem {test\_encode\_word}, \hyperpage{40}
+    \subitem {test\_file\_to\_morse\_tree}, \hyperpage{40}
+    \subitem {test\_flatten\_split\_str}, \hyperpage{40}
+    \subitem {test\_free\_split\_str}, \hyperpage{40}
+    \subitem {test\_free\_tree}, \hyperpage{40}
+    \subitem {test\_init\_node}, \hyperpage{41}
+    \subitem {test\_read\_all\_lines}, \hyperpage{41}
+    \subitem {test\_remove\_new\_lines\_chars}, \hyperpage{41}
+    \subitem {test\_split\_str}, \hyperpage{41}
+    \subitem {test\_write\_to\_file}, \hyperpage{41}
+  \item {tests.h}
+    \subitem {mock\_split\_str}, \hyperpage{45}
+    \subitem {mock\_tree}, \hyperpage{45}
+    \subitem {run\_all\_tests}, \hyperpage{46}
+    \subitem {test\_add\_generate\_morse}, \hyperpage{46}
+    \subitem {test\_decode\_char}, \hyperpage{46}
+    \subitem {test\_decode\_text}, \hyperpage{46}
+    \subitem {test\_decode\_word}, \hyperpage{46}
+    \subitem {test\_encode\_char}, \hyperpage{46}
+    \subitem {test\_encode\_text}, \hyperpage{46}
+    \subitem {test\_encode\_word}, \hyperpage{47}
+    \subitem {test\_file\_to\_morse\_tree}, \hyperpage{47}
+    \subitem {test\_flatten\_split\_str}, \hyperpage{47}
+    \subitem {test\_free\_split\_str}, \hyperpage{47}
+    \subitem {test\_free\_tree}, \hyperpage{47}
+    \subitem {test\_init\_node}, \hyperpage{47}
+    \subitem {test\_read\_all\_lines}, \hyperpage{47}
+    \subitem {test\_remove\_new\_lines\_chars}, \hyperpage{48}
+    \subitem {test\_split\_str}, \hyperpage{48}
+    \subitem {test\_write\_to\_file}, \hyperpage{48}
+  \item {try\_add\_node}
+    \subitem {morse.c}, \hyperpage{24}
+    \subitem {morse.h}, \hyperpage{37}
+
+  \indexspace
+
+  \item {write\_to\_file}
+    \subitem {file\_handling.c}, \hyperpage{12}
+    \subitem {file\_handling.h}, \hyperpage{16}
+
+\end{theindex}

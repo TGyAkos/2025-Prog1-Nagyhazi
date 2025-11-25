@@ -13,10 +13,10 @@
 #include <string.h>
 
 int main(int argc, char **argv) {
-  #ifndef NDEBUG
-    run_all_tests();
-    return 0;
-  #endif // NDEBUG
+#ifndef NDEBUG
+  run_all_tests();
+  return 0;
+#endif // NDEBUG
 
   char *out_filename = malloc((strlen("./result.txt") + 1) * sizeof(char));
   strcpy(out_filename, "./result.txt");
@@ -37,14 +37,18 @@ int main(int argc, char **argv) {
   char *coded_text = is_reverse ? decode_morse_text(start, text_content)
                                 : encode_text(start, text_content);
 
-  write_to_file(coded_text, out_filename);
-  printf("Sikeres forditas %s -> %s\n", argv[2 + is_reverse], out_filename);
+  const int write_rtn = write_to_file(coded_text, out_filename);
+  if (write_rtn == 0)
+    printf("Sikeres forditas %s -> %s\n", argv[2 + is_reverse], out_filename);
 
   free(coded_text);
   free(out_filename);
   free(text_content);
   free_tree(start);
   free(start);
+
+  if (write_rtn == 1)
+    print_error_and_exit(4, "A kimeneti fajl mar letezik");
 
   return 0;
 }

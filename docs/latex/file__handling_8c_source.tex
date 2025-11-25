@@ -1,0 +1,99 @@
+\doxysection{file\+\_\+handling.\+c}
+\hypertarget{file__handling_8c_source}{}\label{file__handling_8c_source}\index{D:/bme/prog1/nagyhazi/src/file\_handling.c@{D:/bme/prog1/nagyhazi/src/file\_handling.c}}
+\mbox{\hyperlink{file__handling_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ User01\ on\ 11/13/2025.}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{file__handling_8h}{file\_handling.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00008}\mbox{\hyperlink{file__handling_8h_a3605f5a2ca991ddab272fffe18e05432}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{file__handling_8c_a3605f5a2ca991ddab272fffe18e05432}{file\_to\_morse\_tree}}(\mbox{\hyperlink{struct_node}{Node}}\ **start,\ \textcolor{keywordtype}{char}\ *filename)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00009}00009\ \ \ \textcolor{keywordtype}{char}\ *lines\ =\ \mbox{\hyperlink{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e}{read\_all\_lines}}(filename);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00010}00010\ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *arr\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(lines,\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00011}00011\ \ \ free(lines);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00012}00012\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ arr-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{struct_split__str}{Split\_str}}\ *code\ =\ \mbox{\hyperlink{morse_8h_aeb9f1be46de043e427ea01c1683ab089}{split\_str}}(arr-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[i],\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (code-\/>\mbox{\hyperlink{struct_split__str_afed088663f8704004425cdae2120b9b3}{len}}\ !=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00015}00015\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00016}00016\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\_tree}}(*start);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00018}00018\ \ \ \ \ \ \ free(*start);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00019}00019\ \ \ \ \ \ \ \mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{print\_error\_and\_exit}}(3,\ \textcolor{stringliteral}{"{}Helytelen\ kodtabla\ formatum"{}});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{morse_8h_a636dfd59b69051f41937be8b92b8b5ce}{add\_generate\_morse}}(start,\ code-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[1],\ code-\/>\mbox{\hyperlink{struct_split__str_a5031727fd46d059a12c2428871243727}{arr}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(code);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00023}00023\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00024}00024\ \ \ \mbox{\hyperlink{morse_8h_a92823e60233ff90b7615eadeaae285bc}{free\_split\_str}}(arr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00028}\mbox{\hyperlink{file__handling_8h_af0bb3faedcf0181f928ab9302cd00e72}{00028}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{file__handling_8c_af0bb3faedcf0181f928ab9302cd00e72}{write\_to\_file}}(\textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{char}\ *filename)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00029}00029\ \ \ FILE\ *checkfp\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00030}00030\ \ \ \textcolor{keywordflow}{if}\ (checkfp\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00031}00031\ \ \ \ \ fclose(checkfp);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00033}00033\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00034}00034\ \ \ FILE\ *fptr\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00035}00035\ \ \ fprintf(fptr,\ \textcolor{stringliteral}{"{}\%s"{}},\ text);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00036}00036\ \ \ fclose(fptr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00037}00037\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00041}\mbox{\hyperlink{file__handling_8h_aa9a1689587e14205272cbce26592a474}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{file__handling_8c_aa9a1689587e14205272cbce26592a474}{remove\_new\_line\_chars}}(\textcolor{keywordtype}{char}\ **str)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00042}00042\ \ \ \textcolor{keywordtype}{int}\ ct\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00043}00043\ \ \ \textcolor{keywordtype}{int}\ ct\_no\_new\_lines\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00044}00044\ \ \ \textcolor{keywordflow}{while}\ ((*str)[ct++]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*str)[ct]\ !=\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00046}00046\ \ \ \ \ \ \ ++ct\_no\_new\_lines;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00048}00048\ \ \ \textcolor{keywordtype}{int}\ ct\_final\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00049}00049\ \ \ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{final}\ =\ malloc((ct\_no\_new\_lines\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00050}00050\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ct\_no\_new\_lines;\ ++i)}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*str)[ct\_no\_new\_lines]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{final}[ct\_final++]\ =\ (*str)[ct\_no\_new\_lines];}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00053}00053\ \ \ \textcolor{keyword}{final}[ct\_no\_new\_lines]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00055}00055\ \ \ free(*str);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00056}00056\ \ \ *str\ =\ \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00060}\mbox{\hyperlink{file__handling_8h_ab07a53a783bca1068fd3c920e6c9bd1e}{00060}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{file__handling_8c_ab07a53a783bca1068fd3c920e6c9bd1e}{read\_all\_lines}}(\textcolor{keywordtype}{char}\ *filename)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00061}00061\ \ \ FILE\ *fptr\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00062}00062\ \ \ \textcolor{keywordflow}{if}\ (fptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00063}00063\ \ \ \ \ fclose(fptr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{morse_8h_a2dcb09eefef8a5fc08b84c5ee9a20239}{print\_error\_and\_exit}}(6,\ \textcolor{stringliteral}{"{}Ilyen\ nevu\ fajl\ nem\ letezik"{}});}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00066}00066\ \ \ \textcolor{keywordtype}{int}\ buffersize\ =\ 31;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00067}00067\ \ \ \textcolor{keywordtype}{char}\ *buff\ =\ malloc(buffersize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00068}00068\ \ \ buff[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00069}00069\ \ \ \textcolor{keywordtype}{char}\ tmp[31];}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00071}00071\ \ \ \textcolor{keywordflow}{while}\ (fgets(tmp,\ \textcolor{keyword}{sizeof}(tmp),\ fptr)\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffersize\ +\ strlen(tmp)\ +\ 1\ >\ buffersize)\ \{}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00073}00073\ \ \ \ \ \ \ buffersize\ +=\ 31;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00074}00074\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *new\_buff\ =\ malloc(buffersize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00075}00075\ \ \ \ \ \ \ strcpy(new\_buff,\ buff);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00076}00076\ \ \ \ \ \ \ free(buff);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00077}00077\ \ \ \ \ \ \ buff\ =\ new\_buff;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00079}00079\ \ \ \ \ strcat(buff,\ tmp);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00080}00080\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00082}00082\ \ \ \textcolor{keywordtype}{int}\ ct\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00083}00083\ \ \ \textcolor{keywordflow}{while}\ (buff[ct]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (buff[ct]\ !=\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00085}00085\ \ \ \ \ \ \ ++ct;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00087}00087\ \ \ \textcolor{keywordtype}{int}\ ct\_final\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00088}00088\ \ \ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{final}\ =\ malloc((ct\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00089}00089\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ct;\ ++i)}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (buff[ct]\ !=\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00091}00091\ \ \ \ \ \ \ \textcolor{keyword}{final}[ct\_final++]\ =\ buff[i];}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00092}00092\ \ \ \textcolor{keyword}{final}[ct]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00094}00094\ \ \ free(buff);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00095}00095\ \ \ fclose(fptr);}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00096}00096\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{file__handling_8c_source_l00097}00097\ \}}
+
+\end{DoxyCode}

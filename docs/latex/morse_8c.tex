@@ -1,0 +1,393 @@
+\doxysection{D\+:/bme/prog1/nagyhazi/src/morse.c File Reference}
+\hypertarget{morse_8c}{}\label{morse_8c}\index{D:/bme/prog1/nagyhazi/src/morse.c@{D:/bme/prog1/nagyhazi/src/morse.c}}
+{\ttfamily \#include "{}morse.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a4071b814aab442f4e9506c2aca1f09f7}{encode\+\_\+text}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}text)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a05077f5210280e02ee9c5a410b4169ab}{encode\+\_\+word}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}word)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_ae38df4717b4a9e35c06c14671de01494}{encode\+\_\+char}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char character)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a9e1ea6a4c071bef90e46b31d1b68bcc6}{decode\+\_\+morse\+\_\+text}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}morse\+\_\+text)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a7246995b03b0c812f222f0bf25e8af22}{decode\+\_\+morse\+\_\+word}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}morse\+\_\+word)
+\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a26ad42d8f17ace1dd43256561c6946f9}{init\+\_\+node}} (void)
+\item 
+char \mbox{\hyperlink{morse_8c_ad32996a23bec64d72c9bc61cdd55a153}{decode\+\_\+morse\+\_\+char}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, char \texorpdfstring{$\ast$}{*}code)
+\item 
+void \mbox{\hyperlink{morse_8c_ab8d9e4a11590b19330ca0a9520fb01cd}{add\+\_\+generate\+\_\+morse}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}start, const char \texorpdfstring{$\ast$}{*}code, const char character)
+\item 
+void \mbox{\hyperlink{morse_8c_aba80b9e664caa5c5c820bae6b3eb230b}{try\+\_\+add\+\_\+node}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}node)
+\item 
+\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}} (const char \texorpdfstring{$\ast$}{*}arr, char delim)
+\item 
+void \mbox{\hyperlink{morse_8c_a92823e60233ff90b7615eadeaae285bc}{free\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}})
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{morse_8c_a5278a18933a25196052f82d517a7fef1}{flatten\+\_\+split\+\_\+str}} (\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{morse_8c_aeb9f1be46de043e427ea01c1683ab089}{split\+\_\+str}}, char \texorpdfstring{$\ast$}{*}delim)
+\item 
+void \mbox{\hyperlink{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}{free\+\_\+tree}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start)
+\item 
+void \mbox{\hyperlink{morse_8c_adabd687889b8ca651f58b07d40e2584e}{dump\+\_\+tree}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start)
+\item 
+void \mbox{\hyperlink{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}{dump\+\_\+node}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}start, int counter)
+\item 
+void \mbox{\hyperlink{morse_8c_a56b10db5a572d6c1adfbbec2ea7b78a4}{print\+\_\+error\+\_\+and\+\_\+exit}} (const int error\+\_\+code, char \texorpdfstring{$\ast$}{*}description)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{morse_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{morse_8c_ab8d9e4a11590b19330ca0a9520fb01cd}\index{morse.c@{morse.c}!add\_generate\_morse@{add\_generate\_morse}}
+\index{add\_generate\_morse@{add\_generate\_morse}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{add\_generate\_morse()}{add\_generate\_morse()}}
+{\footnotesize\ttfamily \label{morse_8c_ab8d9e4a11590b19330ca0a9520fb01cd} 
+void add\+\_\+generate\+\_\+morse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{start}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{code}{, }\item[{const char}]{character}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Generates morse code nodes in the tree based on a morse code pattern Traverses the tree following the dot (.) and dash (-\/) characters in the code Creates new nodes as needed and stores the character at the final position 
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the root node of the morse code tree \\
+\hline
+{\em code} & Morse code pattern string containing dots and dashes \\
+\hline
+{\em character} & Character to be stored at the end of the morse code path\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00139}{139}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_ad32996a23bec64d72c9bc61cdd55a153}\index{morse.c@{morse.c}!decode\_morse\_char@{decode\_morse\_char}}
+\index{decode\_morse\_char@{decode\_morse\_char}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{decode\_morse\_char()}{decode\_morse\_char()}}
+{\footnotesize\ttfamily \label{morse_8c_ad32996a23bec64d72c9bc61cdd55a153} 
+char decode\+\_\+morse\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{code}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Decodes a single morse code character into its plain text representation Traverses the morse tree following the dot (.) and dash (-\/) pattern 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em code} & Morse code string containing dots and dashes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decoded character, or null character if morse code not found in tree
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00116}{116}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a9e1ea6a4c071bef90e46b31d1b68bcc6}\index{morse.c@{morse.c}!decode\_morse\_text@{decode\_morse\_text}}
+\index{decode\_morse\_text@{decode\_morse\_text}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{decode\_morse\_text()}{decode\_morse\_text()}}
+{\footnotesize\ttfamily \label{morse_8c_a9e1ea6a4c071bef90e46b31d1b68bcc6} 
+char \texorpdfstring{$\ast$}{*} decode\+\_\+morse\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{morse\+\_\+text}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Decodes a complete morse code text string back into plain text Morse words in the input are separated by tabs and decoded individually The decoded words are joined with spaces in the output 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em morse\+\_\+text} & Morse code text string to be decoded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decoded plain text string with words separated by spaces, or NULL on error
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00082}{82}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a7246995b03b0c812f222f0bf25e8af22}\index{morse.c@{morse.c}!decode\_morse\_word@{decode\_morse\_word}}
+\index{decode\_morse\_word@{decode\_morse\_word}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{decode\_morse\_word()}{decode\_morse\_word()}}
+{\footnotesize\ttfamily \label{morse_8c_a7246995b03b0c812f222f0bf25e8af22} 
+char \texorpdfstring{$\ast$}{*} decode\+\_\+morse\+\_\+word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{morse\+\_\+word}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Decodes a morse code word back into a plain text word Individual morse characters within the word are separated by spaces 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em morse\+\_\+word} & Morse code word string to be decoded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decoded plain text word, or NULL on error
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00096}{96}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2}\index{morse.c@{morse.c}!dump\_node@{dump\_node}}
+\index{dump\_node@{dump\_node}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{dump\_node()}{dump\_node()}}
+{\footnotesize\ttfamily \label{morse_8c_ab4b5bd48b2bb985e8c692dc03ac672f2} 
+void dump\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{int}]{counter}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Recursively prints morse tree nodes with indentation based on depth Helper function for dump\+\_\+tree that handles the recursive traversal 
+\begin{DoxyParams}{Parameters}
+{\em start} & Current node being printed \\
+\hline
+{\em counter} & Indentation level counter for formatting output\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00247}{247}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_adabd687889b8ca651f58b07d40e2584e}\index{morse.c@{morse.c}!dump\_tree@{dump\_tree}}
+\index{dump\_tree@{dump\_tree}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{dump\_tree()}{dump\_tree()}}
+{\footnotesize\ttfamily \label{morse_8c_adabd687889b8ca651f58b07d40e2584e} 
+void dump\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Prints a visual representation of the morse code tree structure Useful for debugging and verifying the contents of the tree 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the tree to be displayed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00244}{244}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_ae38df4717b4a9e35c06c14671de01494}\index{morse.c@{morse.c}!encode\_char@{encode\_char}}
+\index{encode\_char@{encode\_char}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{encode\_char()}{encode\_char()}}
+{\footnotesize\ttfamily \label{morse_8c_ae38df4717b4a9e35c06c14671de01494} 
+char \texorpdfstring{$\ast$}{*} encode\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char}]{character}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Encodes a single character into its morse code representation Recursively traverses the morse tree to find the character and returns its path 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em character} & Single character to be encoded into morse code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Morse code string (dots and dashes) representing the character, or NULL if not found
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00040}{40}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a4071b814aab442f4e9506c2aca1f09f7}\index{morse.c@{morse.c}!encode\_text@{encode\_text}}
+\index{encode\_text@{encode\_text}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{encode\_text()}{encode\_text()}}
+{\footnotesize\ttfamily \label{morse_8c_a4071b814aab442f4e9506c2aca1f09f7} 
+char \texorpdfstring{$\ast$}{*} encode\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Encodes a complete text string into morse code by encoding each word separately Words in the input text are separated by spaces and encoded individually The encoded words are joined with tab characters in the output 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em text} & Text string to be encoded into morse code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encoded morse code string with words separated by tabs, or NULL on error
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00008}{8}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a05077f5210280e02ee9c5a410b4169ab}\index{morse.c@{morse.c}!encode\_word@{encode\_word}}
+\index{encode\_word@{encode\_word}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{encode\_word()}{encode\_word()}}
+{\footnotesize\ttfamily \label{morse_8c_a05077f5210280e02ee9c5a410b4169ab} 
+char \texorpdfstring{$\ast$}{*} encode\+\_\+word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{word}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Encodes a single word into morse code by encoding each character Characters within the word are encoded and separated by spaces in the output 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse code binary tree \\
+\hline
+{\em word} & Word string to be encoded into morse code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encoded morse code string with characters separated by spaces, or NULL on error
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00022}{22}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a5278a18933a25196052f82d517a7fef1}\index{morse.c@{morse.c}!flatten\_split\_str@{flatten\_split\_str}}
+\index{flatten\_split\_str@{flatten\_split\_str}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{flatten\_split\_str()}{flatten\_split\_str()}}
+{\footnotesize\ttfamily \label{morse_8c_a5278a18933a25196052f82d517a7fef1} 
+char \texorpdfstring{$\ast$}{*} flatten\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{delim}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Flattens a \doxylink{struct_split__str}{Split\+\_\+str} structure back into a single string Joins all parts together with the specified delimiter string between them The delimiter is not added after the final part 
+\begin{DoxyParams}{Parameters}
+{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure containing parts to be flattened \\
+\hline
+{\em delim} & Delimiter string to insert between parts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Flattened string with parts separated by the delimiter
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00216}{216}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a92823e60233ff90b7615eadeaae285bc}\index{morse.c@{morse.c}!free\_split\_str@{free\_split\_str}}
+\index{free\_split\_str@{free\_split\_str}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{free\_split\_str()}{free\_split\_str()}}
+{\footnotesize\ttfamily \label{morse_8c_a92823e60233ff90b7615eadeaae285bc} 
+void free\+\_\+split\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*}}]{split\+\_\+str}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Frees all memory allocated for a \doxylink{struct_split__str}{Split\+\_\+str} structure Deallocates each individual string in the array and the array itself 
+\begin{DoxyParams}{Parameters}
+{\em split\+\_\+str} & \doxylink{struct_split__str}{Split\+\_\+str} structure to be freed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00208}{208}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95}\index{morse.c@{morse.c}!free\_tree@{free\_tree}}
+\index{free\_tree@{free\_tree}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{free\_tree()}{free\_tree()}}
+{\footnotesize\ttfamily \label{morse_8c_af93142b17ebe1ba1b8f9b1d3aa932c95} 
+void free\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{start}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Recursively frees all memory allocated for a morse code tree Performs depth-\/first traversal to deallocate all nodes in both branches 
+\begin{DoxyParams}{Parameters}
+{\em start} & Root node of the morse tree to be freed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00234}{234}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a26ad42d8f17ace1dd43256561c6946f9}\index{morse.c@{morse.c}!init\_node@{init\_node}}
+\index{init\_node@{init\_node}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{init\_node()}{init\_node()}}
+{\footnotesize\ttfamily \label{morse_8c_a26ad42d8f17ace1dd43256561c6946f9} 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} init\+\_\+node (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Initializes a new morse tree node with default values Allocates memory for a \doxylink{struct_node}{Node} and sets all fields to empty/\+NULL values The character is set to null terminator and both pointers are set to NULL \begin{DoxyReturn}{Returns}
+Pointer to newly allocated and initialized \doxylink{struct_node}{Node} structure
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00107}{107}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_a56b10db5a572d6c1adfbbec2ea7b78a4}\index{morse.c@{morse.c}!print\_error\_and\_exit@{print\_error\_and\_exit}}
+\index{print\_error\_and\_exit@{print\_error\_and\_exit}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{print\_error\_and\_exit()}{print\_error\_and\_exit()}}
+{\footnotesize\ttfamily \label{morse_8c_a56b10db5a572d6c1adfbbec2ea7b78a4} 
+void print\+\_\+error\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{const int}]{error\+\_\+code}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{description}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Prints an error message to standard output and terminates the program Used for critical errors that prevent program continuation 
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+code} & Numeric error code identifying the error type \\
+\hline
+{\em description} & Human-\/readable error description message\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00257}{257}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_aeb9f1be46de043e427ea01c1683ab089}\index{morse.c@{morse.c}!split\_str@{split\_str}}
+\index{split\_str@{split\_str}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{split\_str()}{split\_str()}}
+{\footnotesize\ttfamily \label{morse_8c_aeb9f1be46de043e427ea01c1683ab089} 
+\mbox{\hyperlink{struct_split__str}{Split\+\_\+str}} \texorpdfstring{$\ast$}{*} split\+\_\+str (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{char}]{delim}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Splits a string into an array of substrings based on a delimiter character Creates a \doxylink{struct_split__str}{Split\+\_\+str} structure containing the array of parts and their count 
+\begin{DoxyParams}{Parameters}
+{\em arr} & String to be split into parts \\
+\hline
+{\em delim} & Delimiter character used to identify split points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_split__str}{Split\+\_\+str} structure containing the split parts and their count
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00171}{171}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
+\Hypertarget{morse_8c_aba80b9e664caa5c5c820bae6b3eb230b}\index{morse.c@{morse.c}!try\_add\_node@{try\_add\_node}}
+\index{try\_add\_node@{try\_add\_node}!morse.c@{morse.c}}
+\doxysubsubsection{\texorpdfstring{try\_add\_node()}{try\_add\_node()}}
+{\footnotesize\ttfamily \label{morse_8c_aba80b9e664caa5c5c820bae6b3eb230b} 
+void try\+\_\+add\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+
+
+Attempts to allocate a new node if the target pointer is NULL If the pointer already points to allocated memory, the function does nothing Used as a helper to safely create child nodes during tree construction 
+\begin{DoxyParams}{Parameters}
+{\em node} & Pointer to a node pointer that may need allocation\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{morse_8c_source_l00164}{164}} of file \mbox{\hyperlink{morse_8c_source}{morse.\+c}}.
+
