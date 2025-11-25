@@ -19,6 +19,17 @@ int main(int argc, char **argv) {
   run_all_tests();
   return 0;
 #endif // ENABLE_TESTS
+  int is_reverse = 0;
+  if (strcmp(argv[1], "-r") == 0)
+    is_reverse = 1;
+
+  if (argc < 3 && !is_reverse) {
+    print_error_and_exit(6, "Kerem adja meg a kodtablat es a forditando fajlt is\n"
+                            "Pl: ./morze.exe ./t_codetable.txt ./t_text.txt\n");
+  } else if (argc < 4 && is_reverse) {
+    print_error_and_exit(7, "Kerem adja meg a kodtablat es a forditando fajlt is\n"
+                            "Pl: ./morze.exe -r ./t_codetable.txt ./t_text.txt\n");
+  }
 
   char *out_filename = malloc((strlen("./result.txt") + 1) * sizeof(char));
   strcpy(out_filename, "./result.txt");
@@ -28,9 +39,6 @@ int main(int argc, char **argv) {
     strcpy(out_filename, argv[argc - 1]);
   }
 
-  int is_reverse = 0;
-  if (strcmp(argv[1], "-r") == 0)
-    is_reverse = 1;
 
   Node *start = init_node();
   char *text_content = read_all_lines(argv[2 + is_reverse]);
