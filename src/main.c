@@ -4,6 +4,10 @@
 
 #define NDEBUG
 
+#ifndef NDEBUG
+#include "debugmalloc.h"
+#endif // NDEBUG
+
 #include "file_handling.h"
 #include "morse.h"
 
@@ -13,7 +17,6 @@
 
 int main(int argc, char **argv) {
 #ifndef NDEBUG
-#include "debugmalloc.h"
 #include "tests.h"
   run_all_tests();
   return 0;

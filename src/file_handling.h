@@ -5,10 +5,6 @@
 #ifndef NAGYHAZI_FILE_HANDLING_H
 #define NAGYHAZI_FILE_HANDLING_H
 
-#ifndef NDEBUG
-#include "debugmalloc.h"
-#endif // NDEBUG
-
 #include "morse.h"
 
 #include <stdlib.h>
